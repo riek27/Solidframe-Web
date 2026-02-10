@@ -140,22 +140,23 @@ h6 { font-size: 1rem; }
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.7rem 1.5rem;
+    padding: 0.45rem 1.1rem;   /* was 0.7rem 1.5rem */
     background-color: var(--gold);
     color: var(--white);
     border: none;
     border-radius: var(--radius-sm);
     font-family: var(--font-body);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem;        /* was 0.9rem */
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.6px;   /* was 0.8px */
     cursor: pointer;
     transition: var(--transition);
     text-align: center;
     position: relative;
     overflow: hidden;
 }
+
 
 .btn:hover {
     background-color: var(--gold-dark);
