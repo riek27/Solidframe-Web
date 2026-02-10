@@ -1878,22 +1878,29 @@ textarea.form-control {
     transform: translateX(5px);
 }
 
-/* Contact info wrapper */
+/* FORCE footer text visibility */
+.footer-col,
+.footer-col p,
+.footer-col a,
+.footer-col i {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Contact info container */
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.8rem;
 }
 
-/* Each contact row */
+/* Contact rows */
 .contact-info p {
     display: flex;
     align-items: flex-start;
     gap: 10px;
     margin: 0;
-    color: rgba(255, 255, 255, 0.75);
-    line-height: 1.6;
     font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 /* Icons */
@@ -1905,20 +1912,19 @@ textarea.form-control {
     margin-top: 2px;
 }
 
-/* Links inside contact info */
+/* Links */
 .contact-info a {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
     color: var(--gold);
 }
 
-/* Social media row */
+/* Social media block */
 .contact-info .social-media {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
 }
 
 /* Social media link */
@@ -1926,23 +1932,22 @@ textarea.form-control {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: rgba(255, 255, 255, 0.75);
     font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.85);
 }
 
-/* Social media hover effect */
+/* Hover */
 .social-media a:hover {
     color: var(--gold);
     transform: translateX(4px);
 }
 
-/* Social media icon */
+/* Social icon */
 .social-media i {
     font-size: 1.2rem;
     width: 24px;
+    color: var(--gold);
 }
-
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -2255,5 +2260,58 @@ textarea.form-control {
     
     .page-title {
         color: #000 !important;
+    }
+}
+
+/* About Intro Section */
+.about-intro {
+    padding-top: var(--space-xl);
+}
+
+.about-intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.about-intro-title {
+    margin-bottom: var(--space-sm);
+}
+
+.about-intro-subtitle {
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+}
+
+.about-intro-tagline {
+    font-style: italic;
+    margin-bottom: var(--space-md);
+    color: var(--dark-gray);
+}
+
+.about-intro-content p {
+    margin-bottom: var(--space-sm);
+    line-height: 1.7;
+    color: var(--dark-gray);
+}
+
+/* Image */
+.about-intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-intro-image {
+        order: -1;
     }
 }
