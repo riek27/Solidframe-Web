@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Crestline Web Studio</title>
-    <meta name="description" content="Contact Crestline Web Studio for premium website design and development for your construction business. Get your free consultation today.">
-    <meta name="keywords" content="contact construction web design, builder website consultation, contractor website quote">
+    <meta name="description" content="Contact Crestline Web Studio for construction website design. Call, email, or fill out our contact form for a free consultation.">
+    <meta name="keywords" content="contact construction web designer, construction website consultation, builder website contact">
+    <meta name="author" content="Crestline Web Studio">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -45,6 +42,7 @@
                         </li>
                         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                         <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                        <li><a href="faqs.html" class="nav-link">FAQs</a></li>
                         <li><a href="contact.html" class="nav-link active btn-nav">Contact</a></li>
                     </ul>
                 </nav>
@@ -67,7 +65,7 @@
             <li><a href="index.html" class="mobile-nav-link">Home</a></li>
             <li><a href="about.html" class="mobile-nav-link">About</a></li>
             <li class="mobile-has-dropdown">
-                <a href="services.html" class="mobile-nav-link mobile-dropdown-toggle">
+                <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
                     Services <i class="fas fa-chevron-down"></i>
                 </a>
                 <ul class="mobile-dropdown">
@@ -79,167 +77,220 @@
             </li>
             <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
             <li><a href="testimonials.html" class="mobile-nav-link">Testimonials</a></li>
+            <li><a href="faqs.html" class="mobile-nav-link">FAQs</a></li>
             <li><a href="contact.html" class="mobile-nav-link active">Contact</a></li>
         </ul>
     </div>
 
-    <!-- Contact Hero -->
-    <section class="page-hero">
+    <!-- Page Header -->
+    <section class="page-header">
         <div class="container">
-            <div class="page-hero-content">
-                <h1 class="page-hero-title">Contact Us</h1>
-                <p class="page-hero-subtitle">Ready to build your online presence? Get in touch for a free consultation</p>
-            </div>
+            <h1 class="page-title">Contact Us</h1>
+            <p class="page-subtitle">Get in touch for a free consultation about your construction website</p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="section contact-section">
+    <section class="section">
         <div class="container">
-            <div class="contact-grid">
+            <div class="contact-container">
+                <!-- Contact Information -->
                 <div class="contact-info">
-                    <h2 class="contact-title">Let's Build Something Great Together</h2>
-                    <p class="contact-description">We specialize in creating premium websites for construction businesses across the United States. Whether you're a custom home builder, roofing contractor, or remodeling company, we can help you establish a powerful online presence.</p>
+                    <h2 class="mb-3">Get In Touch</h2>
+                    <p class="mb-3">Ready to transform your construction business with a professional website? Contact us today for a free consultation and proposal.</p>
                     
                     <div class="contact-details">
                         <div class="contact-detail">
-                            <div class="detail-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="detail-content">
-                                <h3 class="detail-title">Email</h3>
-                                <p class="detail-text">info@crestlinewebstudio.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="detail-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="detail-content">
-                                <h3 class="detail-title">Response Time</h3>
-                                <p class="detail-text">We typically respond within 24 hours during business days.</p>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Phone</h3>
+                                <p><a href="tel:+17135551234">(713) 555-1234</a></p>
+                                <p class="small-text">Monday - Friday, 9AM - 6PM CST</p>
                             </div>
                         </div>
+                        
                         <div class="contact-detail">
-                            <div class="detail-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p><a href="mailto:info@crestwebstudio.com">info@crestwebstudio.com</a></p>
+                                <p class="small-text">Response within 24 hours</p>
                             </div>
-                            <div class="detail-content">
-                                <h3 class="detail-title">Service Area</h3>
-                                <p class="detail-text">Serving construction businesses across the United States.</p>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Serving Area</h3>
+                                <p>Construction businesses across the United States</p>
+                                <p class="small-text">Based in Houston, Texas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM CST</p>
+                                <p class="small-text">Weekends by appointment</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="contact-expect">
-                        <h3 class="expect-title">What to Expect:</h3>
-                        <ul class="expect-list">
-                            <li><i class="fas fa-check"></i> Free initial consultation</li>
-                            <li><i class="fas fa-check"></i> Custom proposal tailored to your business</li>
-                            <li><i class="fas fa-check"></i> Transparent pricing with no hidden fees</li>
-                            <li><i class="fas fa-check"></i> Clear timeline and project plan</li>
-                            <li><i class="fas fa-check"></i> Ongoing support and maintenance</li>
-                        </ul>
+                    <div class="contact-cta mt-4">
+                        <h3 class="mb-2">Prefer to Call?</h3>
+                        <a href="tel:+17135551234" class="btn btn-primary btn-large">
+                            <i class="fas fa-phone"></i> Call Now: (713) 555-1234
+                        </a>
                     </div>
                 </div>
                 
-                <div class="contact-form-container">
-                    <div class="contact-form-card">
-                        <h3 class="form-title">Send Us a Message</h3>
-                        <p class="form-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 class="mb-3">Send Us a Message</h2>
+                    <p class="mb-3">Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
                         
-                        <form id="contact-form" class="contact-form">
-                            <div class="form-group">
-                                <label for="name" class="form-label">Full Name *</label>
-                                <input type="text" id="name" name="name" class="form-input" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email Address *</label>
-                                <input type="email" id="email" name="email" class="form-input" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="business" class="form-label">Business Name *</label>
-                                <input type="text" id="business" name="business" class="form-input" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="trade" class="form-label">Construction Trade *</label>
-                                <select id="trade" name="trade" class="form-input" required>
-                                    <option value="">Select your trade</option>
-                                    <option value="home-builder">Custom Home Builder</option>
-                                    <option value="roofing">Roofing Company</option>
-                                    <option value="contractor">General Contractor</option>
-                                    <option value="luxury">Luxury Construction Firm</option>
-                                    <option value="remodeling">Remodeling Company</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message" class="form-label">Project Details *</label>
-                                <textarea id="message" name="message" class="form-input textarea" rows="5" required placeholder="Tell us about your website needs, timeline, and any specific requirements..."></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block">
-                                    <span class="btn-text">Send Message</span>
-                                </button>
-                            </div>
-                        </form>
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company Name *</label>
+                            <input type="text" id="company" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="business-type" class="form-label">Type of Construction Business *</label>
+                            <select id="business-type" class="form-control" required>
+                                <option value="">Select one...</option>
+                                <option value="custom-home-builder">Custom Home Builder</option>
+                                <option value="general-contractor">General Contractor</option>
+                                <option value="roofing-company">Roofing Company</option>
+                                <option value="remodeling-company">Remodeling Company</option>
+                                <option value="commercial-contractor">Commercial Contractor</option>
+                                <option value="specialty-contractor">Specialty Contractor</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service-area" class="form-label">Primary Service Area (City/State) *</label>
+                            <input type="text" id="service-area" class="form-control" placeholder="e.g., Houston, TX" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">How Can We Help You? *</label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your website needs, timeline, budget, and any specific requirements..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget" class="form-label">Estimated Budget</label>
+                            <select id="budget" class="form-control">
+                                <option value="">Select budget range</option>
+                                <option value="under-2500">Under $2,500</option>
+                                <option value="2500-5000">$2,500 - $5,000</option>
+                                <option value="5000-10000">$5,000 - $10,000</option>
+                                <option value="over-10000">Over $10,000</option>
+                                <option value="not-sure">Not sure / Need consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="timeline" class="form-label">Preferred Timeline</label>
+                            <select id="timeline" class="form-control">
+                                <option value="">Select timeline</option>
+                                <option value="asap">ASAP</option>
+                                <option value="1-2-months">1-2 months</option>
+                                <option value="3-6-months">3-6 months</option>
+                                <option value="flexible">Flexible / Just exploring</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                            Send Message
+                        </button>
+                        
+                        <p class="form-note mt-2">* Required fields. By submitting this form, you agree to our privacy policy and consent to being contacted by Crestline Web Studio.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Happens Next?</h2>
+                <p class="section-subtitle">Our process after you contact us</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Initial Contact</h3>
+                        <p class="step-description">We'll respond within 24 hours to schedule a free consultation call at your convenience.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Discovery Call</h3>
+                        <p class="step-description">We'll discuss your construction business, goals, and website needs in a 30-minute call.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Custom Proposal</h3>
+                        <p class="step-description">We'll prepare a detailed proposal with scope, timeline, and investment for your review.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Project Kickoff</h3>
+                        <p class="step-description">Once approved, we'll start your construction website project with a detailed planning session.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="section faq-section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Common questions about working with us</p>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3 class="faq-question">How long does the website development process take?</h3>
-                    <p class="faq-answer">Typically 2-3 weeks from initial consultation to launch, depending on the complexity of your project and how quickly you provide content.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Do you offer ongoing support after the website is launched?</h3>
-                    <p class="faq-answer">Yes, all our monthly plans include ongoing support, maintenance, security updates, and performance monitoring.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Can you help with content creation for our website?</h3>
-                    <p class="faq-answer">Yes, we offer content creation services including copywriting, photography guidance, and content strategy specifically for construction businesses.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">What information do I need to provide to get started?</h3>
-                    <p class="faq-answer">We'll need basic information about your business, your target audience, examples of websites you like, and any existing branding materials.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
+    <!-- Quick Contact -->
     <section class="section cta-section bg-dark">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Get Started?</h2>
-                <p class="cta-description">Contact us today for a free consultation and proposal for your construction business website.</p>
-                <a href="#contact-form" class="btn btn-primary btn-large">Get Your Free Consultation</a>
+                <h2 class="cta-title">Need Immediate Assistance?</h2>
+                <p class="cta-description">Call us directly for a quick conversation about your construction website needs.</p>
+                <a href="tel:+17135551234" class="btn btn-primary btn-large">
+                    <i class="fas fa-phone"></i> Call Now: (713) 555-1234
+                </a>
+                <p class="mt-2">Or email us at <a href="mailto:info@crestwebstudio.com" class="email-link">info@crestwebstudio.com</a></p>
             </div>
         </div>
     </section>
 
-     <!-- Footer -->
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="index.html" class="footer-logo">
-                        <span class="logo-main">Crest</span>
+                        <span class="logo-main">Crestline</span>
                         <span class="logo-sub">Web Studio</span>
                     </a>
                     <p class="footer-description">Specializing in premium website design and development for construction businesses across the United States.</p>
@@ -252,6 +303,7 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -267,10 +319,8 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Contact Info</h4>
                     <div class="contact-info">
-                        <p>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@crestwebstudio.com">info@crestwebstudio.com</a>
-                        </p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+17135551234">(713) 555-1234</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@crestwebstudio.com">info@crestwebstudio.com</a></p>
                         <p><i class="fas fa-globe"></i> Serving construction businesses across the U.S.</p>
                         <p class="social-media">
                             <a href="https://www.instagram.com/crestlinewebstudio" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
@@ -281,12 +331,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="copyright">&copy; <span id="current-year"></span> Crest Web Studio — All Rights Reserved</p>
+                <p class="copyright">&copy; <span id="current-year"></span> Crestline Web Studio — All Rights Reserved</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
