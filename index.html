@@ -3,19 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crest Web Studio | Premium Websites for Construction Companies</title>
-    <meta name="description" content="Professional web design & development agency specializing in premium websites for construction businesses, contractors, and builders across the USA.">
+    <title>Crestline Web Studio | Premium Websites for Construction Companies</title>
+    <meta name="description" content="Professional web design & development agency specializing in premium websites for construction businesses across the USA.">
     <meta name="keywords" content="construction websites, builder websites, contractor websites, roofing company websites, web design for construction">
     <meta name="author" content="Crestline Web Studio">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Crestline Web Studio | Professional Websites for Construction Businesses">
-    <meta property="og:description" content="Premium web design & development for construction companies across the United States.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://crestlinewebstudio.com">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,6 +16,8 @@
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -32,7 +25,7 @@
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="logo">
-                    <span class="logo-main">Crest</span>
+                    <span class="logo-main">Crestline</span>
                     <span class="logo-sub">Web Studio</span>
                 </a>
                 
@@ -55,6 +48,7 @@
                         </li>
                         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                         <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                        <li><a href="faqs.html" class="nav-link">FAQs</a></li>
                         <li><a href="contact.html" class="nav-link btn-nav">Contact</a></li>
                     </ul>
                 </nav>
@@ -66,7 +60,7 @@
     <div class="mobile-menu">
         <div class="mobile-menu-header">
             <a href="index.html" class="logo">
-                <span class="logo-main">Crest</span>
+                <span class="logo-main">Crestline</span>
                 <span class="logo-sub">Web Studio</span>
             </a>
             <button class="mobile-menu-close" aria-label="Close menu">
@@ -77,7 +71,7 @@
             <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
             <li><a href="about.html" class="mobile-nav-link">About</a></li>
             <li class="mobile-has-dropdown">
-                <a href="services.html" class="mobile-nav-link mobile-dropdown-toggle">
+                <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
                     Services <i class="fas fa-chevron-down"></i>
                 </a>
                 <ul class="mobile-dropdown">
@@ -89,6 +83,7 @@
             </li>
             <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
             <li><a href="testimonials.html" class="mobile-nav-link">Testimonials</a></li>
+            <li><a href="faqs.html" class="mobile-nav-link">FAQs</a></li>
             <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
         </ul>
     </div>
@@ -96,9 +91,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg">
-            <div class="hero-bg-image active" style="background-image: url('assets/aadaniel.jpg');"></div>
-            <div class="hero-bg-image" style="background-image: url('assets/aawebb.jpg');"></div>
-            <div class="hero-bg-image" style="background-image: url('assets/aadaniel.jpg');"></div>
+            <div class="hero-bg-image"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -107,8 +100,8 @@
                 <span id="typed-text"></span><span class="cursor"></span>
             </div>
             <div class="hero-cta">
-                <a href="#contact-form" class="btn btn-hero btn-typing" id="cta-btn">
-                    <span class="btn-text">Let's Build Your Website</span>
+                <a href="contact.html" class="btn btn-primary btn-hero">
+                    Let's Build Your Website
                 </a>
                 <a href="pricing.html" class="btn btn-secondary btn-hero">
                     View Pricing Plans
@@ -122,7 +115,7 @@
     </section>
     
     <!-- Who We Help Section -->
-    <section class="section industries">
+    <section id="who-we-help" class="section industries">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Who We Help</h2>
@@ -189,7 +182,7 @@
                     </div>
                     <h3 class="service-title">Website Design</h3>
                     <p class="service-description">Custom designs that reflect your brand and appeal to your target clients with industry-specific layouts and visuals.</p>
-                    <a href="services.html#design" class="btn btn-secondary">Learn More</a>
+                    <a href="services.html" class="btn btn-secondary">See Our Services</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -197,7 +190,7 @@
                     </div>
                     <h3 class="service-title">Website Development</h3>
                     <p class="service-description">Fast, responsive websites built with modern technologies and best practices for optimal performance and user experience.</p>
-                    <a href="services.html#development" class="btn btn-secondary">Learn More</a>
+                    <a href="services.html" class="btn btn-secondary">See Our Services</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -205,7 +198,7 @@
                     </div>
                     <h3 class="service-title">SEO & Local Ranking</h3>
                     <p class="service-description">Get found by local clients searching for construction services in your area with advanced SEO strategies.</p>
-                    <a href="services.html#seo" class="btn btn-secondary">Learn More</a>
+                    <a href="services.html" class="btn btn-secondary">See Our Services</a>
                 </div>
             </div>
         </div>
@@ -278,18 +271,15 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"Crest transformed our outdated website into a lead-generating machine. We've seen a 40% increase in inquiries since launching our new site. They truly understand the construction industry."</p>
+                        <p>"Crestline transformed our outdated website into a lead-generating machine. We've seen a 40% increase in inquiries since launching our new site. They truly understand the construction industry."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Michael Rodriguez" class="author-img">
-                            <div class="avatar-fallback">
-                                <i class="fas fa-user"></i>
-                            </div>
                         </div>
                         <div class="author-info">
                             <h4>Michael Rodriguez</h4>
-                            <p>Owner, Elite Custom Builders • Texas</p>
+                            <p>Owner, Elite Custom Builders • Houston, TX</p>
                         </div>
                     </div>
                 </div>
@@ -304,18 +294,15 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"As a roofing contractor, local SEO was crucial for us. Crest not only built us a beautiful website but also helped us rank #1 for roofing services in our area. The results have been incredible."</p>
+                        <p>"As a roofing contractor, local SEO was crucial for us. Crestline not only built us a beautiful website but also helped us rank #1 for roofing services in our area. The results have been incredible."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="assets/alex.jpg" alt="Sarah Johnson" class="author-img">
-                            <div class="avatar-fallback">
-                                <i class="fas fa-user"></i>
-                            </div>
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sarah Johnson" class="author-img">
                         </div>
                         <div class="author-info">
                             <h4>Sarah Johnson</h4>
-                            <p>CEO, Peak Roofing Solutions • Colorado</p>
+                            <p>CEO, Peak Roofing Solutions • Dallas, TX</p>
                         </div>
                     </div>
                 </div>
@@ -330,21 +317,19 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"Our luxury home building company needed a website that reflected the quality of our work. Crest delivered beyond our expectations. The design is stunning and the functionality is flawless."</p>
+                        <p>"Our luxury home building company needed a website that reflected the quality of our work. Crestline delivered beyond our expectations. The design is stunning and the functionality is flawless."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="James Worthington" class="author-img">
-                            <div class="avatar-fallback">
-                                <i class="fas fa-user"></i>
-                            </div>
                         </div>
                         <div class="author-info">
                             <h4>James Worthington</h4>
-                            <p>President, Worthington Luxury Homes • California</p>
+                            <p>President, Worthington Luxury Homes • Austin, TX</p>
                         </div>
                     </div>
                 </div>
+            </div>
             <div class="text-center mt-4">
                 <a href="testimonials.html" class="btn btn-primary">See All Our Testimonials</a>
             </div>
@@ -360,15 +345,15 @@
             </div>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number" data-count="94">90</div>
+                    <div class="stat-number" data-count="90">0</div>
                     <p>of construction clients research online before hiring</p>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" data-count="75">75</div>
+                    <div class="stat-number" data-count="75">0</div>
                     <p>credibility based on website design alone</p>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" data-count="3">10x</div>
+                    <div class="stat-number" data-count="10">0</div>
                     <p>more leads with professionally designed websites</p>
                 </div>
             </div>
@@ -392,7 +377,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="index.html" class="footer-logo">
-                        <span class="logo-main">Crest</span>
+                        <span class="logo-main">Crestline</span>
                         <span class="logo-sub">Web Studio</span>
                     </a>
                     <p class="footer-description">Specializing in premium website design and development for construction businesses across the United States.</p>
@@ -405,6 +390,7 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -420,10 +406,8 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Contact Info</h4>
                     <div class="contact-info">
-                        <p>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@crestwebstudio.com">info@crestwebstudio.com</a>
-                        </p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+17135551234">(713) 555-1234</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@crestwebstudio.com">info@crestwebstudio.com</a></p>
                         <p><i class="fas fa-globe"></i> Serving construction businesses across the U.S.</p>
                         <p class="social-media">
                             <a href="https://www.instagram.com/crestlinewebstudio" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
@@ -434,7 +418,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="copyright">&copy; <span id="current-year"></span> Crest Web Studio — All Rights Reserved</p>
+                <p class="copyright">&copy; <span id="current-year"></span> Crestline Web Studio — All Rights Reserved</p>
             </div>
         </div>
     </footer>
