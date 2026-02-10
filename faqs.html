@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Crestline Web Studio</title>
+    <meta name="description" content="Frequently asked questions about construction website design, development, pricing, and process.">
+    <meta name="keywords" content="construction website FAQs, web design questions, builder website help, contractor web development">
+    <meta name="author" content="Crestline Web Studio">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-main">Crestline</span>
+                    <span class="logo-sub">Web Studio</span>
+                </a>
+                
+                <button class="mobile-menu-btn" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li class="has-dropdown">
+                            <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="services.html#design">Website Design</a></li>
+                                <li><a href="services.html#development">Website Development</a></li>
+                                <li><a href="services.html#seo">SEO & Local Ranking</a></li>
+                                <li><a href="services.html#redesign">Website Redesign</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                        <li><a href="faqs.html" class="nav-link active">FAQs</a></li>
+                        <li><a href="contact.html" class="nav-link btn-nav">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">
+                <span class="logo-main">Crestline</span>
+                    <span class="logo-sub">Web Studio</span>
+                </a>
+                <button class="mobile-menu-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                <li class="mobile-has-dropdown">
+                    <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
+                        Services <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="mobile-dropdown">
+                        <li><a href="services.html#design" class="mobile-nav-link">Website Design</a></li>
+                        <li><a href="services.html#development" class="mobile-nav-link">Website Development</a></li>
+                        <li><a href="services.html#seo" class="mobile-nav-link">SEO & Local Ranking</a></li>
+                        <li><a href="services.html#redesign" class="mobile-nav-link">Website Redesign</a></li>
+                    </ul>
+                </li>
+                <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+                <li><a href="testimonials.html" class="mobile-nav-link">Testimonials</a></li>
+                <li><a href="faqs.html" class="mobile-nav-link active">FAQs</a></li>
+                <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Frequently Asked Questions</h1>
+                <p class="page-subtitle">Get answers to common questions about construction website design and development</p>
+            </div>
+        </section>
+
+        <!-- FAQ Categories -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Comprehensive FAQ Categories</h2>
+                    <p class="section-subtitle">Find answers organized by topic for easy navigation</p>
+                </div>
+                
+                <div class="faq-categories">
+                    <div class="category-buttons">
+                        <button class="category-btn active" data-category="general">General Questions</button>
+                        <button class="category-btn" data-category="services">Services</button>
+                        <button class="category-btn" data-category="pricing">Pricing & Payments</button>
+                        <button class="category-btn" data-category="process">Process & Timeline</button>
+                        <button class="category-btn" data-category="technical">Technical Questions</button>
+                        <button class="category-btn" data-category="industry">Industry Specific</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Sections -->
+        <section class="section bg-light">
+            <div class="container">
+                <!-- General Questions -->
+                <div class="faq-category active" id="general-category">
+                    <h3 class="faq-category-title">General Questions</h3>
+                    
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What makes Crestline Web Studio different from other web agencies?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We specialize exclusively in the construction industry. Unlike general web agencies, we understand construction workflows, client concerns, and industry-specific marketing needs. Our team has worked with over 150 construction businesses, giving us deep insights into what works best for builders, contractors, and remodelers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Do you only work with construction companies in Texas?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>While we're based in Houston and love working with Texas construction businesses, we serve construction companies across the entire United States. Our expertise translates to any location, though we have particular insight into Texas markets and regulations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How do you ensure my website will appeal to construction clients?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We use industry-specific research and our experience with construction clients to design websites that address their specific concerns. This includes clear project showcases, service explanations, credential displays, and trust-building elements that construction clients look for when hiring.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What if I need help after my website launches?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>All our packages include a support period (30-180 days depending on package). After that, we offer maintenance plans starting at $99/month that include updates, security monitoring, backups, and technical support. We never leave you stranded after launch.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Services Questions -->
+                <div class="faq-category" id="services-category" style="display: none;">
+                    <h3 class="faq-category-title">Services Questions</h3>
+                    
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What exactly is included in "website design"?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our website design service includes: custom layout creation, color scheme development, typography selection, construction-specific imagery selection, mobile-responsive design, user experience optimization, and industry-appropriate design elements that appeal to construction clients.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Do you handle website hosting and domain registration?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We can handle both hosting and domain registration for you (additional costs apply), or we can help you set these up with your preferred provider. We recommend reliable hosting services optimized for construction websites and can provide guidance on domain selection.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What is "local SEO" and why is it important for construction companies?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Local SEO optimizes your website to appear in location-based searches like "construction companies near me" or "roofing contractors in [your city]." Since most construction work is local, this is crucial for attracting clients in your specific service areas. We optimize your Google Business Profile, build local citations, and implement location-specific keywords.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Can you redesign my existing construction website?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, website redesign is one of our specialty services. We'll audit your current site, identify areas for improvement, and create a modern, high-performing website while preserving your existing content and SEO value. Many construction businesses see significant improvements after a redesign with us.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pricing & Payments -->
+                <div class="faq-category" id="pricing-category" style="display: none;">
+                    <h3 class="faq-category-title">Pricing & Payments</h3>
+                    
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Why is construction website design more expensive than generic templates?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Custom construction websites require specialized knowledge of the industry, custom functionality for project showcases, specific lead capture forms for construction services, and optimization for local search in competitive markets. Our expertise ensures your website generates real business results, not just looks pretty.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Do you offer payment plans?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we offer flexible payment plans. Typically we require 50% to start the project and 50% upon completion. For larger projects, we can arrange milestone-based payments. We understand cash flow is important for construction businesses and work to create payment terms that work for you.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Are there any hidden fees?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>No, our pricing is transparent. The quoted price includes design, development, basic SEO setup, and the support period. Additional costs would only be for optional add-ons like premium stock photography, custom illustrations, extended SEO services, or ongoing maintenance plans - all discussed and approved upfront.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What if I want to add features later?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We can always add features later. During our support period, minor additions are often included. After that, we offer hourly rates or project quotes for new features. We recommend planning your essential features upfront but understand that business needs evolve.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Process & Timeline -->
+                <div class="faq-category" id="process-category" style="display: none;">
+                    <h3 class="faq-category-title">Process & Timeline</h3>
+                    
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What is your typical website development process?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our process: 1) Discovery & strategy session, 2) Design mockups and approval, 3) Development and content integration, 4) Testing and revisions, 5) Launch and SEO setup, 6) Training and handover. We maintain clear communication throughout and provide regular updates.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How long does it take to build a construction website?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Timelines vary by package: Starter (3-4 weeks), Professional (4-6 weeks), Premium (6-8 weeks). The biggest factor in timeline is how quickly you can provide content (text, photos, project details). We'll create a detailed timeline during our initial planning.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What do you need from me to get started?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We need: your business information, logo and branding materials, project photos, service descriptions, company bio, and any existing content you want to keep. We provide a detailed checklist and can help you gather what you need.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How many revisions do I get?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We include 2 rounds of revisions for design and 2 rounds for development. This covers most needs while keeping the project on schedule. Additional revisions are available if needed. Our goal is to get it right within the included revisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical Questions -->
+                <div class="faq-category" id="technical-category" style="display: none;">
+                    <h3 class="faq-category-title">Technical Questions</h3>
+                    
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Will my website work on mobile devices?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely. All our websites are built "mobile-first," meaning they're designed for mobile devices first then enhanced for desktop. Given that over 60% of construction service searches happen on mobile, this is a critical feature we prioritize for every site.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What platforms/technologies do you use?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We use modern, standards-based technologies: HTML5, CSS3, JavaScript, and optionally WordPress for content management. We avoid bloated frameworks that slow down sites. Our focus is on fast, secure, and maintainable code that delivers excellent performance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How do you ensure website security?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We implement SSL certificates, follow security best practices in coding, use secure hosting environments, and provide regular security updates as part of our maintenance plans. For WordPress sites, we implement additional security measures and monitoring.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Can I update the website content myself?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! We build websites with easy-to-use content management systems (like WordPress) so you can update text, add project photos, and manage your content without technical knowledge. We provide training and documentation to ensure you're comfortable making updates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Industry Specific -->
+                <div class="faq-category" id="industry-category" style="display: none;">
+                    <h3 class="faq-category-title">Industry Specific</h3>
+                    
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How do you showcase construction projects effectively?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We create dedicated project galleries with filtering options (by type, location, year), before/after comparisons, detailed project descriptions, and high-quality photography layouts. We understand that your projects are your best marketing tool and design accordingly.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What construction-specific features do you include?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Service area maps, project timeline displays, certification/credential showcases, team member profiles with specialties, client testimonial sections, service request forms tailored to construction needs, and integration with construction-specific software when needed.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How do you handle service area targeting for construction companies?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We create service area pages, optimize for local keywords, set up location-specific content, implement schema markup for service areas, and ensure your Google Business Profile is properly configured. This helps you attract clients in your specific geographic markets.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Do you understand construction industry regulations and certifications?
+                                <i class="fas fa-plus faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we're familiar with common construction certifications (LEED, OSHA, state licenses), insurance requirements, and industry regulations. We know how to prominently display these trust signals on your website to build credibility with potential clients.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Still Have Questions -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Still Have Questions?</h2>
+                    <p class="section-subtitle">We're here to help with any questions about construction website design</p>
+                </div>
+                
+                <div class="contact-options">
+                    <div class="contact-option">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="contact-option-title">Call Us</h3>
+                        <p>Speak directly with our construction website specialists</p>
+                        <a href="tel:+17135551234" class="btn btn-secondary">(713) 555-1234</a>
+                    </div>
+                    
+                    <div class="contact-option">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="contact-option-title">Email Us</h3>
+                        <p>Send us your questions and we'll respond within 24 hours</p>
+                        <a href="mailto:info@crestwebstudio.com" class="btn btn-primary">Send Us Email</a>
+                    </div>
+                    
+                    <div class="contact-option">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="contact-option-title">Schedule Consultation</h3>
+                        <p>Book a free 30-minute consultation to discuss your needs</p>
+                        <a href="contact.html" class="btn btn-secondary">Schedule Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <a href="index.html" class="footer-logo">
+                            <span class="logo-main">Crestline</span>
+                            <span class="logo-sub">Web Studio</span>
+                        </a>
+                        <p class="footer-description">Specializing in premium website design and development for construction businesses across the United States.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="services.html#design">Website Design</a></li>
+                            <li><a href="services.html#development">Website Development</a></li>
+                            <li><a href="services.html#seo">SEO & Local Ranking</a></li>
+                            <li><a href="services.html#redesign">Website Redesign</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> <a href="tel:+17135551234">(713) 555-1234</a></p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:info@crestwebstudio.com">info@crestwebstudio.com</a></p>
+                            <p><i class="fas fa-globe"></i> Serving construction businesses across the U.S.</p>
+                            <p class="social-media">
+                                <a href="https://www.instagram.com/crestlinewebstudio" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                                    <i class="fab fa-instagram"></i> Follow us on Instagram
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">&copy; <span id="current-year"></span> Crestline Web Studio — All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        <script>
+            // FAQ Category Tabs
+            document.addEventListener('DOMContentLoaded', function() {
+                const categoryButtons = document.querySelectorAll('.category-btn');
+                const faqCategories = document.querySelectorAll('.faq-category');
+                
+                categoryButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const category = button.getAttribute('data-category');
+                        
+                        // Update active button
+                        categoryButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                        
+                        // Show selected category
+                        faqCategories.forEach(cat => {
+                            if (cat.id === `${category}-category`) {
+                                cat.style.display = 'block';
+                            } else {
+                                cat.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
