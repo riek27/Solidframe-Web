@@ -1751,3 +1751,154 @@ textarea.form-control {
         margin-top: var(--space-sm);
     }
 }
+
+
+/* Add these styles to the existing style.css file */
+
+/* Pricing Badge */
+.pricing-badge {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: var(--gold);
+    color: var(--white);
+    padding: 8px 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transform: rotate(45deg);
+    box-shadow: var(--shadow-sm);
+}
+
+/* FAQ Categories */
+.faq-categories {
+    margin-bottom: var(--space-xl);
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.category-btn {
+    padding: 12px 24px;
+    background: var(--white);
+    border: 2px solid var(--medium-gray);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.category-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.category-btn.active {
+    background: var(--gold-gradient);
+    color: var(--white);
+    border-color: var(--gold);
+}
+
+/* Contact Options */
+.contact-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--grid-gap);
+    margin-top: var(--space-xl);
+}
+
+.contact-option {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.contact-option:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gold-gradient);
+    border-radius: var(--radius-round);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.contact-option-title {
+    margin-bottom: var(--space-sm);
+}
+
+/* Form Note */
+.form-note {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    font-style: italic;
+}
+
+/* Small Text */
+.small-text {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    margin-top: 5px;
+}
+
+/* Phone Link */
+.phone-link {
+    color: var(--gold-light);
+    font-weight: 600;
+}
+
+.phone-link:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Additional responsive styles */
+@media (max-width: 768px) {
+    .category-buttons {
+        flex-direction: column;
+    }
+    
+    .category-btn {
+        width: 100%;
+    }
+    
+    .contact-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-badge {
+        right: -20px;
+        padding: 6px 20px;
+        font-size: 0.8rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+}
