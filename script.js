@@ -340,3 +340,87 @@ document.addEventListener('DOMContentLoaded', function() {
     
     handleAnchorLinks();
 });
+
+
+// Add these functions to the existing script.js file
+
+// FAQ Category Switching
+document.addEventListener('DOMContentLoaded', function() {
+    // FAQ Category Tabs
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const faqCategories = document.querySelectorAll('.faq-category');
+    
+    if (categoryButtons.length > 0) {
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                
+                // Update active button
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Show selected category
+                faqCategories.forEach(cat => {
+                    if (cat.id === `${category}-category`) {
+                        cat.style.display = 'block';
+                    } else {
+                        cat.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+    
+    // Enhanced Contact Form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const businessType = document.getElementById('business-type').value;
+            const serviceArea = document.getElementById('service-area').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !company || !email || !phone || !businessType || !serviceArea || !message) {
+                alert('Please fill in all required fields (marked with *).');
+                return;
+            }
+            
+            // Create a more detailed message
+            const budget = document.getElementById('budget').value;
+            const timeline = document.getElementById('timeline').value;
+            
+            let details = `Name: ${name}\n`;
+            details += `Company: ${company}\n`;
+            details += `Email: ${email}\n`;
+            details += `Phone: ${phone}\n`;
+            details += `Business Type: ${businessType}\n`;
+            details += `Service Area: ${serviceArea}\n`;
+            if (budget) details += `Budget: ${budget}\n`;
+            if (timeline) details += `Timeline: ${timeline}\n`;
+            details += `\nMessage:\n${message}`;
+            
+            // In a real implementation, you would send this data to a server
+            // For now, we'll just show an alert
+            alert(`Thank you, ${name} from ${company}!\n\nYour message has been sent successfully. We'll contact you at ${email} or ${phone} within 24 hours.\n\nHere are the details we received:\n\n${details}`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+    
+    // Auto-expand textarea
+    const messageTextarea = document.getElementById('message');
+    if (messageTextarea) {
+        messageTextarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    }
+});
