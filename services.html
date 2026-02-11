@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Crestline Web Studio</title>
-    <meta name="description" content="Professional web design, development, and SEO services specifically for construction businesses. Get a website that generates leads.">
-    <meta name="keywords" content="construction website design, contractor website development, builder SEO services">
+    <title>Services | Crestline Web Studio | Construction Website Design & Development</title>
+    <meta name="description" content="Professional website design, development, and SEO services specifically for construction businesses. Get a website that generates leads and builds credibility.">
+    <meta name="keywords" content="construction website design, contractor website development, construction SEO, website redesign for builders">
     <meta name="author" content="Crestline Web Studio">
     
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://api.iconify.design/mdi:hammer.svg">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -42,7 +49,8 @@
                         </li>
                         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                         <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
-                        <li><a href="faqs.html" class="nav-link">FAQs</a></li>
+                        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
                         <li><a href="contact.html" class="nav-link btn-nav">Contact</a></li>
                     </ul>
                 </nav>
@@ -68,7 +76,7 @@
                 <a href="#" class="mobile-nav-link mobile-dropdown-toggle active">
                     Services <i class="fas fa-chevron-down"></i>
                 </a>
-                <ul class="mobile-dropdown">
+                <ul class="mobile-dropdown active">
                     <li><a href="#design" class="mobile-nav-link">Website Design</a></li>
                     <li><a href="#development" class="mobile-nav-link">Website Development</a></li>
                     <li><a href="#seo" class="mobile-nav-link">SEO & Local Ranking</a></li>
@@ -77,237 +85,291 @@
             </li>
             <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
             <li><a href="testimonials.html" class="mobile-nav-link">Testimonials</a></li>
-            <li><a href="faqs.html" class="mobile-nav-link">FAQs</a></li>
+            <li><a href="faq.html" class="mobile-nav-link">FAQs</a></li>
+            <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
             <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
         </ul>
     </div>
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header services-header">
+        <div class="page-header-bg"></div>
+        <div class="page-header-overlay"></div>
         <div class="container">
-            <h1 class="page-title">Our Services</h1>
-            <p class="page-subtitle">Complete web solutions designed specifically for construction businesses</p>
-        </div>
-    </section>
-
-    <!-- Services with Accordion -->
-    <section class="section">
-        <div class="container">
-            <div class="services-accordion">
-                <!-- Service 1 -->
-                <div class="service-accordion-item" id="design">
-                    <div class="service-accordion-header">
-                        <div class="service-icon">
-                            <i class="fas fa-pencil-ruler"></i>
-                        </div>
-                        <div class="service-header-content">
-                            <h3 class="service-title">Website Design</h3>
-                            <p class="service-subtitle">Custom designs that showcase your construction expertise</p>
-                        </div>
-                        <button class="accordion-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                    <div class="service-accordion-content">
-                        <div class="service-details">
-                            <div class="service-detail-column">
-                                <h4>What's Included</h4>
-                                <ul class="service-features">
-                                    <li><i class="fas fa-check"></i> Custom design tailored to construction industry</li>
-                                    <li><i class="fas fa-check"></i> Mobile-first responsive design</li>
-                                    <li><i class="fas fa-check"></i> Project portfolio showcase design</li>
-                                    <li><i class="fas fa-check"></i> Service pages with clear CTAs</li>
-                                    <li><i class="fas fa-check"></i> Brand-consistent color scheme</li>
-                                    <li><i class="fas fa-check"></i> Construction-specific imagery selection</li>
-                                </ul>
-                            </div>
-                            <div class="service-detail-column">
-                                <h4>Benefits for Your Construction Business</h4>
-                                <ul class="service-benefits">
-                                    <li><i class="fas fa-chart-line"></i> Professional appearance that builds trust</li>
-                                    <li><i class="fas fa-mobile-alt"></i> Perfect display on all devices</li>
-                                    <li><i class="fas fa-eye"></i> Visual showcase of your best work</li>
-                                    <li><i class="fas fa-users"></i> Clear pathways for client inquiries</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-accordion-item" id="development">
-                    <div class="service-accordion-header">
-                        <div class="service-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="service-header-content">
-                            <h3 class="service-title">Website Development</h3>
-                            <p class="service-subtitle">Fast, secure, and high-performing construction websites</p>
-                        </div>
-                        <button class="accordion-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                    <div class="service-accordion-content">
-                        <div class="service-details">
-                            <div class="service-detail-column">
-                                <h4>What's Included</h4>
-                                <ul class="service-features">
-                                    <li><i class="fas fa-check"></i> Custom-coded HTML5, CSS3, JavaScript</li>
-                                    <li><i class="fas fa-check"></i> CMS integration (WordPress optional)</li>
-                                    <li><i class="fas fa-check"></i> Contact forms with spam protection</li>
-                                    <li><i class="fas fa-check"></i> Project gallery with filtering</li>
-                                    <li><i class="fas fa-check"></i> Fast loading times (under 3 seconds)</li>
-                                    <li><i class="fas fa-check"></i> SSL security certificate</li>
-                                </ul>
-                            </div>
-                            <div class="service-detail-column">
-                                <h4>Benefits for Your Construction Business</h4>
-                                <ul class="service-benefits">
-                                    <li><i class="fas fa-bolt"></i> Lightning-fast site speed</li>
-                                    <li><i class="fas fa-shield-alt"></i> Secure and protected</li>
-                                    <li><i class="fas fa-edit"></i> Easy content updates</li>
-                                    <li><i class="fas fa-briefcase"></i> Showcase projects effectively</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-accordion-item" id="seo">
-                    <div class="service-accordion-header">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="service-header-content">
-                            <h3 class="service-title">SEO & Local Ranking</h3>
-                            <p class="service-subtitle">Get found by clients searching for construction services</p>
-                        </div>
-                        <button class="accordion-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                    <div class="service-accordion-content">
-                        <div class="service-details">
-                            <div class="service-detail-column">
-                                <h4>What's Included</h4>
-                                <ul class="service-features">
-                                    <li><i class="fas fa-check"></i> Local SEO optimization</li>
-                                    <li><i class="fas fa-check"></i> Google Business Profile setup</li>
-                                    <li><i class="fas fa-check"></i> Construction-specific keyword research</li>
-                                    <li><i class="fas fa-check"></i> On-page SEO optimization</li>
-                                    <li><i class="fas fa-check"></i> Local citation building</li>
-                                    <li><i class="fas fa-check"></i> Monthly performance reporting</li>
-                                </ul>
-                            </div>
-                            <div class="service-detail-column">
-                                <h4>Benefits for Your Construction Business</h4>
-                                <ul class="service-benefits">
-                                    <li><i class="fas fa-search-location"></i> Rank higher in local searches</li>
-                                    <li><i class="fas fa-map-marker-alt"></i> Get found by local clients</li>
-                                    <li><i class="fas fa-phone-volume"></i> More phone calls and inquiries</li>
-                                    <li><i class="fas fa-chart-bar"></i> Track your results and growth</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-accordion-item" id="redesign">
-                    <div class="service-accordion-header">
-                        <div class="service-icon">
-                            <i class="fas fa-sync-alt"></i>
-                        </div>
-                        <div class="service-header-content">
-                            <h3 class="service-title">Website Redesign</h3>
-                            <p class="service-subtitle">Modernize your outdated construction website</p>
-                        </div>
-                        <button class="accordion-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                    <div class="service-accordion-content">
-                        <div class="service-details">
-                            <div class="service-detail-column">
-                                <h4>What's Included</h4>
-                                <ul class="service-features">
-                                    <li><i class="fas fa-check"></i> Complete website audit</li>
-                                    <li><i class="fas fa-check"></i> Modern design refresh</li>
-                                    <li><i class="fas fa-check"></i> Mobile responsiveness upgrade</li>
-                                    <li><i class="fas fa-check"></i> Content optimization</li>
-                                    <li><i class="fas fa-check"></i> SEO improvements</li>
-                                    <li><i class="fas fa-check"></i> Smooth transition to new site</li>
-                                </ul>
-                            </div>
-                            <div class="service-detail-column">
-                                <h4>Benefits for Your Construction Business</h4>
-                                <ul class="service-benefits">
-                                    <li><i class="fas fa-paint-roller"></i> Fresh, modern appearance</li>
-                                    <li><i class="fas fa-rocket"></i> Improved performance</li>
-                                    <li><i class="fas fa-handshake"></i> Better user experience</li>
-                                    <li><i class="fas fa-money-bill-wave"></i> Increased conversion rates</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="page-header-content">
+                <h1>Our Services</h1>
+                <p>Comprehensive web solutions tailored specifically for construction businesses</p>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Our Services -->
-    <section class="section bg-light">
+    <!-- Services Section -->
+    <section id="design" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Construction-Focused Expertise</h2>
-                <p class="section-subtitle">We don't just build websites - we build construction business growth engines</p>
+                <h2 class="section-title">Website Design</h2>
+                <p class="section-subtitle">Custom designs that reflect your construction brand and appeal to your target clients</p>
             </div>
-            
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-hard-hat"></i>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
                     </div>
-                    <h3 class="expertise-title">Industry Understanding</h3>
-                    <p class="expertise-description">We understand construction workflows, client concerns, and industry-specific marketing needs.</p>
+                    <h3 class="service-title">Custom Design</h3>
+                    <p class="service-description">Unique website designs created specifically for your construction business, not generic templates.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Industry-specific layouts</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Custom color schemes</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Brand integration</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Project showcase design</li>
+                    </ul>
                 </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-map-marked-alt"></i>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3 class="expertise-title">Local Focus</h3>
-                    <p class="expertise-description">We optimize for local search so you attract clients in your specific service areas.</p>
+                    <h3 class="service-title">Responsive Design</h3>
+                    <p class="service-description">Websites that look and function perfectly on all devices - desktop, tablet, and mobile.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Mobile-first approach</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Touch-friendly navigation</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Cross-browser compatibility</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Optimized for on-site viewing</li>
+                    </ul>
                 </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">User-friendly interfaces that guide potential clients through your services and convert them into leads.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Intuitive navigation</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Clear call-to-actions</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> User journey optimization</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Conversion-focused design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website Development -->
+    <section id="development" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Website Development</h2>
+                <p class="section-subtitle">Fast, responsive websites built with modern technologies and construction industry best practices</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Frontend Development</h3>
+                    <p class="service-description">Clean, semantic code that ensures your website loads quickly and works flawlessly.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> HTML5, CSS3, JavaScript</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Performance optimization</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Animation implementation</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Cross-device testing</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="service-title">Backend Development</h3>
+                    <p class="service-description">Robust backend systems that handle your content management and lead capture needs.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> CMS integration</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Contact form systems</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Database setup</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Security implementation</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="service-title">Functionality</h3>
+                    <p class="service-description">Industry-specific features that construction businesses need to succeed online.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Project galleries</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Service area displays</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Lead capture forms</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Testimonial systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO & Local Ranking -->
+    <section id="seo" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">SEO & Local Ranking</h2>
+                <p class="section-subtitle">Get found by local clients searching for construction services in your area</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3 class="service-title">Local SEO</h3>
+                    <p class="service-description">Optimize your website to appear in local searches for construction services in your service area.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Google Business setup</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Local citation building</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Service area optimization</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> NAP consistency</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="service-title">Keyword Strategy</h3>
+                    <p class="service-description">Target the specific keywords and phrases your potential clients use when searching for construction services.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Industry keyword research</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Competitive analysis</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Content optimization</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Meta tag optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="service-title">Performance Tracking</h3>
+                    <p class="service-description">Monitor your website's performance and make data-driven improvements to increase visibility.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Google Analytics setup</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Search Console integration</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Monthly performance reports</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Conversion tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website Redesign -->
+    <section id="redesign" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Website Redesign</h2>
+                <p class="section-subtitle">Transform your outdated website into a modern, lead-generating asset</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="service-title">Complete Redesign</h3>
+                    <p class="service-description">Completely overhaul your existing website with modern design, improved functionality, and better performance.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Design modernization</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Content reorganization</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Performance improvement</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Mobile optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <h3 class="service-title">Website Expansion</h3>
+                    <p class="service-description">Add new pages, features, and functionality to your existing website to better serve your growing business.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> New page development</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Feature additions</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Content updates</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Design refresh</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <h3 class="expertise-title">Lead Generation</h3>
-                    <p class="expertise-description">Every element is designed to convert visitors into qualified construction leads.</p>
+                    <h3 class="service-title">Performance Optimization</h3>
+                    <p class="service-description">Improve your existing website's speed, SEO, and user experience without a complete redesign.</p>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Speed optimization</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> SEO improvements</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> User experience enhancements</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Security updates</li>
+                    </ul>
                 </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Focused Expertise -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Industry-Focused Expertise</h2>
+                <p class="section-subtitle">Why choosing a construction-specific web agency matters</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Construction Industry Knowledge</h3>
+                        <p class="feature-description">We understand construction workflows, client concerns, and industry terminology, allowing us to create websites that truly resonate with your target audience.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Local Market Understanding</h3>
+                        <p class="feature-description">With offices in Houston and Miami, we understand regional construction markets and can tailor your website to appeal to local clients and regulations.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Project Showcase Expertise</h3>
+                        <p class="feature-description">We know how construction companies want to showcase their work and design portfolio sections that effectively highlight your projects and craftsmanship.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 class="expertise-title">Ongoing Support</h3>
-                    <p class="expertise-description">We provide support and maintenance to keep your website performing at its best.</p>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Client Communication Focus</h3>
+                        <p class="feature-description">We build websites that facilitate clear communication with potential clients, from initial inquiry to project completion, reducing friction in your sales process.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section cta-section bg-dark">
+    <section class="cta-section">
+        <div class="cta-bg"></div>
         <div class="container">
             <div class="cta-content">
                 <h2 class="cta-title">Ready to Transform Your Online Presence?</h2>
-                <p class="cta-description">Call us today to discuss your construction website needs</p>
-                <a href="tel:+17135551234" class="btn btn-primary btn-large">
-                    <i class="fas fa-phone"></i> Call Us Now: (713) 555-1234
-                </a>
-                <p class="mt-2">Based in Houston, serving construction businesses across Texas and the entire USA</p>
+                <p class="cta-description">Our construction industry expertise ensures your website will be designed to attract, engage, and convert your ideal clients.</p>
+                <div class="hero-cta">
+                    <a href="contact.html" class="btn btn-primary btn-hero">
+                        Get a Free Consultation
+                    </a>
+                    <a href="tel:+17135551234" class="btn btn-secondary btn-hero">
+                        <i class="fas fa-phone"></i> Call Now: (713) 555-1234
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -331,7 +393,6 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="faqs.html">FAQs</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -347,9 +408,8 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Contact Info</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> <a href="tel:+17135551234">(713) 555-1234</a></p>
-                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@crestwebstudio.com">info@crestwebstudio.com</a></p>
-                        <p><i class="fas fa-globe"></i> Serving construction businesses across the U.S.</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@crestlinewebstudio.com">info@crestlinewebstudio.com</a></p>
+                        <p><i class="fas fa-phone"></i> Houston: <a href="tel:+17135551234">(713) 555-1234</a></p>
                         <p class="social-media">
                             <a href="https://www.instagram.com/crestlinewebstudio" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
                                 <i class="fab fa-instagram"></i> Follow us on Instagram
@@ -364,6 +424,7 @@
         </div>
     </footer>
 
+    <!-- Main JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
