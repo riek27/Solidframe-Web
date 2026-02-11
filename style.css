@@ -2336,12 +2336,16 @@ textarea.form-control {
     padding-left: 5px;
 }
 
-/*/* ===========================================
-   FOOTER – CONTACT INFO (Centered, Premium Glow)
+/* ===========================================
+   FOOTER – CONTACT INFO (Dark Background, Premium Readability)
 =========================================== */
 
+.footer-col {
+    background: transparent; /* Ensures no white background */
+}
+
 .footer-title {
-    font-size: 1.5rem;        /* Slightly reduced for better hierarchy */
+    font-size: 1.5rem;
     font-weight: 700;
     color: #ffffff;
     text-align: center;
@@ -2353,6 +2357,7 @@ textarea.form-control {
     display: inline-block;
 }
 
+/* Contact Info Container – no background, fully transparent */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -2360,84 +2365,167 @@ textarea.form-control {
     justify-content: center;
     gap: var(--space-sm);
     width: 100%;
+    background: transparent !important; /* Force remove any white bg */
 }
 
+/* Individual contact rows */
 .contact-info p {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #e0e0e0;
-    font-size: 1.05rem;
+    color: #ffffff;        /* Pure white for maximum readability */
+    font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 0;
     flex-wrap: wrap;
     text-align: center;
+    background: transparent;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Subtle depth */
 }
 
+/* Icons – gold with stronger glow */
 .contact-info i {
     margin-right: 12px;
     color: var(--gold);
     width: 24px;
     text-align: center;
-    font-size: 1.2rem;
-    text-shadow: 0 0 8px rgba(197, 165, 114, 0.6);
+    font-size: 1.3rem;
+    text-shadow: 0 0 12px rgba(197, 165, 114, 0.8);
     transition: all 0.3s ease;
+    background: transparent;
 }
 
+/* Email & Phone links – bright white */
 .contact-info a {
-    color: #1a1a1a;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;      /* Slightly bolder for clarity */
+    transition: color 0.3s ease, transform 0.2s ease, border-color 0.2s;
     border-bottom: 1px solid transparent;
     padding-bottom: 2px;
+    background: transparent;
 }
 
 .contact-info a:hover {
     color: var(--gold);
     border-bottom-color: var(--gold);
+    transform: translateY(-1px);
 }
 
-/* Social Media Section – Clean & Centered */
-.social-media {
+/* Social Media – separate row, more prominent */
+.contact-info .social-media {
     display: flex;
-    flex-direction: row;      /* Horizontal layout for modern look */
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-top: var(--space-md);
     gap: 30px;
     flex-wrap: wrap;
+    background: transparent;
+    width: 100%;
 }
 
-.social-media a {
+.contact-info .social-media a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #e0e0e0;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.1rem;
     transition: color 0.3s ease, transform 0.3s ease;
-    gap: 8px;
+    gap: 10px;
+    background: transparent;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.social-media a i {
+.contact-info .social-media a i {
     margin-right: 0;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--gold);
-    text-shadow: 0 0 10px rgba(197, 165, 114, 0.5);
+    text-shadow: 0 0 15px rgba(197, 165, 114, 0.9);
     transition: transform 0.3s ease;
+    background: transparent;
 }
 
-.social-media a:hover {
+.contact-info .social-media a:hover {
     color: var(--gold);
     transform: translateY(-3px);
 }
 
-.social-media a:hover i {
-    transform: scale(1.1);
+.contact-info .social-media a:hover i {
+    transform: scale(1.15);
 }
 
+/* Footer Bottom – copyright */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: var(--space-md);
+    margin-top: var(--space-lg);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 768px) {
+    .footer-title {
+        font-size: 1.3rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .contact-info i {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .contact-info .social-media {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-info .social-media a {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-title {
+        font-size: 1.2rem;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+    }
+
+    .contact-info i {
+        font-size: 1.1rem;
+    }
+
+    .contact-info .social-media a {
+        font-size: 0.95rem;
+    }
+
+    .contact-info .social-media a i {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer-title {
+        font-size: 1.1rem;
+    }
+
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+}
 /* Footer Bottom – Copyright */
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
