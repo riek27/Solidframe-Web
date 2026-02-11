@@ -1660,6 +1660,86 @@ textarea.form-control {
 }
 
 /* ===========================================
+   BLOG SECTION – Read More / Read Less Toggle
+=========================================== */
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blog-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.blog-excerpt p {
+    margin-bottom: 0;
+}
+
+.blog-full-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s ease,
+                margin 0.3s ease;
+    margin-top: 0;
+}
+
+.blog-full-content.show {
+    max-height: 500px;  /* Adjust based on your content */
+    opacity: 1;
+    margin-top: var(--space-md);
+    overflow: visible;
+}
+
+.btn-read-more {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+    margin-top: var(--space-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 2px solid transparent;
+    align-self: flex-start;
+}
+
+.btn-read-more i {
+    transition: transform 0.3s ease;
+}
+
+.btn-read-more.active i {
+    transform: rotate(180deg);
+}
+
+.btn-read-more:hover {
+    color: var(--gold-dark);
+    border-bottom-color: var(--gold-light);
+}
+
+/* Responsive adjustments for blog-full-content */
+@media (max-width: 768px) {
+    .blog-full-content.show {
+        max-height: 600px; /* Allow more space on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-full-content.show {
+        max-height: 700px;
+    }
+}
+
+/* ===========================================
    BLOG READ MORE / READ LESS
 =========================================== */
 .blog-full-content {
