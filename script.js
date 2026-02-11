@@ -212,30 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ===========================================
-    // CONTACT FORM SUBMISSION
-    // ===========================================
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const company = document.getElementById('company').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
-            
-            // In a real implementation, you would send this data to a server
-            // For now, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been sent. We'll contact you at ${email} or ${phone} within 24 hours.`);
-            
-            // Reset form
-            contactForm.reset();
-        });
-    }
-    
+
     // ===========================================
     // ACTIVE NAV LINK HIGHLIGHTING
     // ===========================================
@@ -316,3 +293,43 @@ document.addEventListener('DOMContentLoaded', function() {
     
     lazyImages.forEach(img => imageObserver.observe(img));
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("contact-success");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch("/", {
+            method: "POST",
+            body: new URLSearchParams(formData),
+            headers: { "Content-Type": "application/x-www-form-urlencoded" }
+        })
+        .then(() => {
+            // Show success message
+            successMessage.style.display = "block";
+            setTimeout(() => {
+                successMessage.style.opacity = "1";
+            }, 10); // trigger CSS transition
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.opacity = "0";
+                setTimeout(() => {
+                    successMessage.style.display = "none";
+                }, 500); // match transition
+            }, 5000);
+
+            // Reset form
+            form.reset();
+        })
+        .catch((error) => {
+            alert("Oops! There was a problem submitting your form.");
+            console.error(error);
+        });
+    });
+});
+
