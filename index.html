@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crestline Web Studio | Premium Websites for Construction Companies</title>
-    <meta name="description" content="Professional web design & development agency specializing in premium websites for construction businesses across the USA.">
+    <meta name="description" content="Professional web design & development agency specializing in premium websites for construction businesses, contractors, and builders across the USA.">
     <meta name="keywords" content="construction websites, builder websites, contractor websites, roofing company websites, web design for construction">
     <meta name="author" content="Crestline Web Studio">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Crestline Web Studio | Professional Websites for Construction Businesses">
+    <meta property="og:description" content="Premium web design & development for construction companies across the United States.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://crestlinewebstudio.com">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,10 +20,11 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Stylesheet -->
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://api.iconify.design/mdi:hammer.svg">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -48,7 +55,8 @@
                         </li>
                         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                         <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
-                        <li><a href="faqs.html" class="nav-link">FAQs</a></li>
+                        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
                         <li><a href="contact.html" class="nav-link btn-nav">Contact</a></li>
                     </ul>
                 </nav>
@@ -83,15 +91,16 @@
             </li>
             <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
             <li><a href="testimonials.html" class="mobile-nav-link">Testimonials</a></li>
-            <li><a href="faqs.html" class="mobile-nav-link">FAQs</a></li>
+            <li><a href="faq.html" class="mobile-nav-link">FAQs</a></li>
+            <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
             <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
         </ul>
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="hero-bg">
-            <div class="hero-bg-image"></div>
+            <div class="hero-bg-image active"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -168,8 +177,8 @@
         </div>
     </section>
 
-    <!-- Services Highlight -->
-    <section class="section services-highlight bg-light">
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Services</h2>
@@ -182,7 +191,13 @@
                     </div>
                     <h3 class="service-title">Website Design</h3>
                     <p class="service-description">Custom designs that reflect your brand and appeal to your target clients with industry-specific layouts and visuals.</p>
-                    <a href="services.html" class="btn btn-secondary">See Our Services</a>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Industry-specific templates</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Mobile-first responsive design</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Custom branding integration</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Project portfolio showcase</li>
+                    </ul>
+                    <a href="services.html" class="btn btn-secondary">Learn More</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -190,7 +205,13 @@
                     </div>
                     <h3 class="service-title">Website Development</h3>
                     <p class="service-description">Fast, responsive websites built with modern technologies and best practices for optimal performance and user experience.</p>
-                    <a href="services.html" class="btn btn-secondary">See Our Services</a>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Fast loading times (under 3 seconds)</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Mobile-optimized performance</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Easy-to-use content management</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> SEO-friendly structure</li>
+                    </ul>
+                    <a href="services.html" class="btn btn-secondary">Learn More</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -198,14 +219,20 @@
                     </div>
                     <h3 class="service-title">SEO & Local Ranking</h3>
                     <p class="service-description">Get found by local clients searching for construction services in your area with advanced SEO strategies.</p>
-                    <a href="services.html" class="btn btn-secondary">See Our Services</a>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Local SEO optimization</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Google Business Profile setup</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Keyword research & strategy</li>
+                        <li class="pricing-feature"><i class="fas fa-check"></i> Monthly performance reports</li>
+                    </ul>
+                    <a href="services.html" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section class="section why-choose">
+    <section class="section why-choose bg-light">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Why Choose Us</h2>
@@ -252,8 +279,8 @@
         </div>
     </section>
 
-    <!-- Testimonials Section (Homepage) -->
-    <section class="section testimonials-home bg-light">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials-home">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Client Testimonials</h2>
@@ -275,7 +302,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Michael Rodriguez" class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Rodriguez" class="author-img">
                         </div>
                         <div class="author-info">
                             <h4>Michael Rodriguez</h4>
@@ -298,7 +325,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sarah Johnson" class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="author-img">
                         </div>
                         <div class="author-info">
                             <h4>Sarah Johnson</h4>
@@ -321,7 +348,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="James Worthington" class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="James Worthington" class="author-img">
                         </div>
                         <div class="author-info">
                             <h4>James Worthington</h4>
@@ -331,13 +358,13 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <a href="testimonials.html" class="btn btn-primary">See All Our Testimonials</a>
+                <a href="testimonials.html" class="btn btn-primary">View All Testimonials</a>
             </div>
         </div>
     </section>
 
     <!-- Trust Building Stats -->
-    <section class="section trust-section">
+    <section class="section trust-section bg-dark">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Building Trust Online</h2>
@@ -345,7 +372,7 @@
             </div>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number" data-count="90">0</div>
+                    <div class="stat-number" data-count="94">0</div>
                     <p>of construction clients research online before hiring</p>
                 </div>
                 <div class="stat-card">
@@ -353,7 +380,7 @@
                     <p>credibility based on website design alone</p>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" data-count="10">0</div>
+                    <div class="stat-number" data-count="300">0</div>
                     <p>more leads with professionally designed websites</p>
                 </div>
             </div>
@@ -361,11 +388,12 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section cta-section bg-dark">
+    <section class="cta-section">
+        <div class="cta-bg"></div>
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Build Your Online Presence?</h2>
-                <p class="cta-description">Contact us today for a free consultation and proposal for your construction business website.</p>
+                <h2 class="cta-title">Ready to Build Your Digital Foundation?</h2>
+                <p class="cta-description">Let's create a website that showcases your craftsmanship and generates quality leads for your construction business.</p>
                 <a href="contact.html" class="btn btn-primary btn-large">Get Started Today</a>
             </div>
         </div>
@@ -390,7 +418,6 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="faqs.html">FAQs</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -406,9 +433,9 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Contact Info</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> <a href="tel:+17135551234">(713) 555-1234</a></p>
-                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@crestwebstudio.com">info@crestwebstudio.com</a></p>
-                        <p><i class="fas fa-globe"></i> Serving construction businesses across the U.S.</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@crestlinewebstudio.com">info@crestlinewebstudio.com</a></p>
+                        <p><i class="fas fa-phone"></i> Houston: <a href="tel:+17135551234">(713) 555-1234</a></p>
+                        <p><i class="fas fa-phone"></i> Miami: <a href="tel:+13055551234">(305) 555-1234</a></p>
                         <p class="social-media">
                             <a href="https://www.instagram.com/crestlinewebstudio" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
                                 <i class="fab fa-instagram"></i> Follow us on Instagram
@@ -423,7 +450,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Main JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
