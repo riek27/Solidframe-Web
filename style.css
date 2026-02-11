@@ -1585,49 +1585,161 @@ img {
     background: var(--beige);
     border-radius: var(--radius-lg);
 }
-
 /* ===========================================
-   CONTACT SECTION
+   CONTACT SECTION – Premium 2-Column Layout
+   Fully responsive, elegant, conversion-focused
 =========================================== */
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--grid-gap);
+    grid-template-columnS: 1fr 1fr;
+    gap: var(--grid-gap-lg);
+    align-items: stretch;
 }
 
-.contact-info {
+/* Contact Information Card */
+.contact-info-card {
     background: var(--white);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
+.contact-info-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+/* Contact Form Card */
+.contact-form-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.contact-form-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+/* Contact Details */
 .contact-details {
     margin-top: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
 }
 
 .contact-detail {
     display: flex;
     align-items: flex-start;
-    margin-bottom: var(--space-md);
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--medium-gray);
 }
 
-.contact-detail i {
-    color: var(--gold);
-    font-size: 1.2rem;
-    margin-right: 15px;
-    margin-top: 5px;
+.contact-detail:last-child {
+    border-bottom: none;
+}
+
+.contact-icon {
     flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: var(--gold-gradient);
+    border-radius: var(--radius-round);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-gold);
 }
 
-.contact-form {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    padding: var(--space-xl);
-    box-shadow: var(--shadow-md);
+.contact-text {
+    flex: 1;
 }
 
+.contact-text h4 {
+    margin-bottom: 4px;
+    font-size: 1.2rem;
+    color: var(--charcoal);
+}
+
+.contact-text p {
+    margin-bottom: 2px;
+    color: var(--dark-gray);
+    font-size: 1rem;
+}
+
+.contact-text a {
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-text a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+.contact-note {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    opacity: 0.8;
+}
+
+/* Social Media inside Contact Info */
+.contact-social {
+    margin-top: var(--space-lg);
+    text-align: center;
+}
+
+.contact-social h4 {
+    margin-bottom: var(--space-md);
+    font-size: 1.2rem;
+    color: var(--charcoal);
+}
+
+.contact-social .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+}
+
+.contact-social .social-links .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+}
+
+/* Success Message */
+.contact-success-message {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.contact-success-message.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Form Styling */
 .form-group {
     margin-bottom: var(--space-md);
 }
@@ -1636,29 +1748,160 @@ img {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
+    color: var(--charcoal);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .form-control {
     width: 100%;
-    padding: 15px;
+    padding: 14px 16px;
     border: 1px solid var(--medium-gray);
     border-radius: var(--radius-md);
     font-family: var(--font-body);
     font-size: 1rem;
     transition: var(--transition);
+    background: var(--white);
 }
 
 .form-control:focus {
     outline: none;
     border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(197, 165, 114, 0.1);
+    box-shadow: 0 0 0 4px rgba(197, 165, 114, 0.1);
 }
 
 textarea.form-control {
-    min-height: 150px;
+    min-height: 140px;
     resize: vertical;
 }
 
+.btn-submit {
+    width: 100%;
+    padding: 16px !important;
+    font-size: 1.1rem;
+    margin-top: var(--space-sm);
+}
+
+/* Service Area Section */
+.service-area-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--grid-gap-lg);
+    align-items: center;
+    margin-top: var(--space-lg);
+}
+
+.service-area-content {
+    padding-right: var(--space-lg);
+}
+
+.service-area-map .map-placeholder {
+    background: var(--light-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.service-area-map .map-placeholder:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.service-area-map .map-placeholder i {
+    color: var(--gold);
+    text-shadow: 0 0 15px rgba(197, 165, 114, 0.4);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+    .contact-container,
+    .service-area-grid {
+        grid-template-columns: 1fr;
+        gap: var(--grid-gap);
+    }
+
+    .service-area-content {
+        padding-right: 0;
+        order: 1;
+    }
+
+    .service-area-map {
+        order: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info-card,
+    .contact-form-card {
+        padding: var(--space-lg);
+    }
+
+    .contact-detail {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-xs);
+    }
+
+    .contact-icon {
+        margin-bottom: var(--space-xs);
+    }
+
+    .contact-social .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-social .social-links .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .service-area-grid {
+        text-align: center;
+    }
+
+    .service-area-content {
+        padding: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info-card,
+    .contact-form-card {
+        padding: var(--space-md);
+    }
+
+    .contact-text h4 {
+        font-size: 1.1rem;
+    }
+
+    .contact-text p,
+    .contact-text a {
+        font-size: 0.95rem;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .form-control {
+        padding: 12px;
+    }
+
+    .btn-submit {
+        padding: 14px !important;
+    }
+
+    .service-area-map .map-placeholder {
+        padding: var(--space-lg);
+    }
+}
 /* ===========================================
    BLOG PAGE – Premium Construction Blog Design
    Fully responsive, Read More / Read Less toggle,
