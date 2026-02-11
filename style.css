@@ -1153,13 +1153,14 @@ img {
 }
 
 /* ===========================================
-   PRICING SECTION
+   PRICING SECTION – Premium Construction Packages
 =========================================== */
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--grid-gap);
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--grid-gap-lg);
+    margin-top: var(--space-lg);
 }
 
 .pricing-card {
@@ -1167,74 +1168,238 @@ img {
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     box-shadow: var(--shadow-md);
-    transition: var(--transition);
+    transition: var(--transition-bounce);
     position: relative;
     overflow: hidden;
-}
-
-.pricing-card.featured {
-    border: 2px solid var(--gold);
-    transform: scale(1.05);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
 }
 
 .pricing-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
 }
 
-.pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-10px);
+/* Featured card – most popular */
+.pricing-card.featured {
+    border: 2px solid var(--gold);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-gold);
 }
 
+.pricing-card.featured:hover {
+    transform: scale(1.02) translateY(-8px);
+}
+
+/* "Most Popular" badge – refined rotation & positioning */
 .pricing-badge {
     position: absolute;
-    top: 20px;
-    right: -30px;
+    top: 25px;
+    right: -35px;
     background: var(--gold-gradient);
     color: var(--white);
-    padding: 5px 30px;
+    padding: 8px 40px;
     transform: rotate(45deg);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-sm);
+    z-index: 2;
 }
 
+/* Header area */
 .pricing-header {
     text-align: center;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
     padding-bottom: var(--space-md);
     border-bottom: 1px solid var(--medium-gray);
 }
 
 .pricing-name {
-    font-size: 1.5rem;
-    margin-bottom: var(--space-sm);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
 }
 
 .pricing-price {
     font-family: var(--font-heading);
-    font-size: 3rem;
-    color: var(--gold);
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    line-height: 1;
     margin-bottom: var(--space-xs);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.pricing-price::before {
+    content: '$';
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--gold);
+    margin-right: 4px;
 }
 
 .pricing-period {
     color: var(--dark-gray);
-    font-size: 1rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-xs);
 }
 
+.pricing-tagline {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gold);
+    font-style: italic;
+    background: var(--beige);
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: var(--radius-sm);
+    margin-top: var(--space-xs);
+}
+
+/* Features list – clean & scannable */
 .pricing-features {
     margin-bottom: var(--space-lg);
+    flex: 1;
 }
 
 .pricing-feature {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: var(--space-sm);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--charcoal);
 }
 
 .pricing-feature i {
+    flex-shrink: 0;
+    width: 20px;
+    margin-right: 12px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.pricing-feature .fa-check {
     color: var(--gold);
+}
+
+.pricing-feature .fa-times {
+    color: var(--dark-gray);
+    opacity: 0.6;
+}
+
+.pricing-feature span.text-muted {
+    color: var(--dark-gray);
+    opacity: 0.75;
+    font-style: normal;
+}
+
+/* Trust badges – confidence builders */
+.pricing-trust {
+    background: var(--off-white);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    border-left: 4px solid var(--gold);
+}
+
+.pricing-trust p {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-xs);
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    font-weight: 500;
+}
+
+.pricing-trust p:last-child {
+    margin-bottom: 0;
+}
+
+.pricing-trust p::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
     margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Buttons – full width, consistent */
+.pricing-card .btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .pricing-card.featured {
+        transform: none;
+    }
+    .pricing-card.featured:hover {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: var(--grid-gap);
+    }
+
+    .pricing-card {
+        padding: var(--space-lg);
+    }
+
+    .pricing-price {
+        font-size: 2.8rem;
+    }
+
+    .pricing-price::before {
+        font-size: 1.8rem;
+    }
+
+    .pricing-badge {
+        top: 20px;
+        right: -35px;
+        padding: 6px 35px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-card {
+        padding: var(--space-md);
+    }
+
+    .pricing-name {
+        font-size: 1.5rem;
+    }
+
+    .pricing-price {
+        font-size: 2.4rem;
+    }
+
+    .pricing-price::before {
+        font-size: 1.5rem;
+    }
+
+    .pricing-trust p {
+        font-size: 0.9rem;
+    }
 }
 
 /* ===========================================
