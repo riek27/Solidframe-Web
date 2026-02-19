@@ -3196,4 +3196,45 @@ textarea.form-control {
     color: #fff;
 }
 
+/* ===========================================
+   LOGO IMAGE STYLES
+=========================================== */
+
+.logo {
+    display: inline-flex;        /* Keeps alignment with nav items */
+    align-items: center;
+    line-height: 0;               /* Removes extra space below the image */
+    transition: opacity var(--transition);
+}
+
+.logo:hover {
+    opacity: 0.85;                 /* Subtle hover effect */
+}
+
+.logo-img {
+    display: block;
+    max-height: 60px;              /* Adjust this value to match your header height */
+    width: auto;                    /* Maintains aspect ratio */
+    height: auto;                   /* Ensures proper scaling */
+    object-fit: contain;            /* Prevents distortion */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo-img {
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        max-height: 40px;
+    }
+}
+
+/* Optional: Add a gold accent on hover */
+.logo:hover .logo-img {
+    filter: brightness(1.05) sepia(0.2) hue-rotate(-5deg);
+    /* Tweak the values to match your gold (#c5a572) */
+}
 
