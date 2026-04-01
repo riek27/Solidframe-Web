@@ -4,30 +4,31 @@
 =========================================== */
 
 :root {
+    /* Base Colors */
     --charcoal: #1a1a1a;
     --charcoal-light: #2a2a2a;
-
-    --gold: #d4af37;
-    --gold-dark: #b8962e;
-    --gold-light: #f0e2b6;
-    --gold-gradient: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-
+    --gold: #c5a572;
+    --gold-dark: #a88a5a;
+    --gold-light: #e6d4b3;
     --white: #ffffff;
     --off-white: #f9f9f9;
     --beige: #f5f2ed;
-
     --light-gray: #f8f8f8;
     --medium-gray: #eaeaea;
     --dark-gray: #444444;
 
-    --bg-dark: #0f141a;
-    --overlay-dark: rgba(0, 0, 0, 0.7);
-
-    /* 🔥 Add this for conversions */
-    --accent: #0ea5e9;
-
+    /* Typography */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
+
+    /* Interactive */
+    --btn-bg: var(--gold);
+    --btn-bg-hover: var(--gold-dark);
+    --btn-text: var(--charcoal);
+    --link-color: var(--gold-dark);
+    --link-hover: var(--gold);
+    --border-color: var(--medium-gray);
+    --focus-ring: var(--gold-light);
 }
     
     /* Enhanced Spacing */
