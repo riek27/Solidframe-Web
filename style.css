@@ -3,23 +3,28 @@
    Main Stylesheet
 =========================================== */
 
+/* CSS Variables (Enhanced Premium Palette) */
 :root {
-    /* Base Colors */
+    /* Premium Color Palette */
     --charcoal: #1a1a1a;
     --charcoal-light: #2a2a2a;
     --gold: #c5a572;
     --gold-dark: #a88a5a;
     --gold-light: #e6d4b3;
+    --gold-gradient: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
     --white: #ffffff;
     --off-white: #f9f9f9;
     --beige: #f5f2ed;
     --light-gray: #f8f8f8;
     --medium-gray: #eaeaea;
     --dark-gray: #444444;
-
-    /* Typography */
+    --bg-dark: #0f141a;
+    --overlay-dark: rgba(0, 0, 0, 0.7);
+    
+    /* Premium Typography */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
+    --font-accent: 'Lato', sans-serif;
 
     /* Interactive */
     --btn-bg: var(--gold);
