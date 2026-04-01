@@ -152,6 +152,96 @@
         @media (max-width: 768px) {
             .case-study-grid, .process-steps { flex-direction: column; }
             .stat-number { font-size: 2rem; }
+            /* Call to Action Section */
+.cta-section {
+    background: linear-gradient(135deg, #fef9ef 0%, #ffffff 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 30px;
+    margin: 2rem auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c5e2a; /* deep green matching your brand */
+    margin-bottom: 1rem;
+}
+
+.cta-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary.btn-hero {
+    background-color: #f5b50a;
+    color: #1e2a1c;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary.btn-hero:hover {
+    background-color: #e0a006;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary.btn-hero {
+    background-color: transparent;
+    color: #2c5e2a;
+    border: 2px solid #f5b50a;
+}
+
+.btn-secondary.btn-hero:hover {
+    background-color: #f5b50a;
+    color: #1e2a1c;
+    transform: translateY(-2px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 2rem 1rem;
+        margin: 1rem;
+    }
+    .cta-title {
+        font-size: 1.6rem;
+    }
+    .hero-cta {
+        gap: 1rem;
+    }
+    .btn-hero {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
         }
     </style>
 </head>
