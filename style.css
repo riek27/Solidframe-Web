@@ -3,28 +3,32 @@
    Main Stylesheet
 =========================================== */
 
-/* CSS Variables (Enhanced Premium Palette) */
 :root {
-    /* Premium Color Palette */
     --charcoal: #1a1a1a;
     --charcoal-light: #2a2a2a;
-    --gold: #c5a572;
-    --gold-dark: #a88a5a;
-    --gold-light: #e6d4b3;
+
+    --gold: #d4af37;
+    --gold-dark: #b8962e;
+    --gold-light: #f0e2b6;
     --gold-gradient: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+
     --white: #ffffff;
     --off-white: #f9f9f9;
     --beige: #f5f2ed;
+
     --light-gray: #f8f8f8;
     --medium-gray: #eaeaea;
     --dark-gray: #444444;
+
     --bg-dark: #0f141a;
     --overlay-dark: rgba(0, 0, 0, 0.7);
-    
-    /* Premium Typography */
+
+    /* 🔥 Add this for conversions */
+    --accent: #0ea5e9;
+
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
-    --font-accent: 'Lato', sans-serif;
+}
     
     /* Enhanced Spacing */
     --space-xs: 0.5rem;
