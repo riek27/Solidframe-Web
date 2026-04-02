@@ -271,6 +271,78 @@
         transform: translateY(-2px);
     }
 
+    /* ============================================
+   FIX FOR CASE STUDY INNER BOXES (reviews.html)
+   Overrides white/light backgrounds to match dark theme
+   ============================================ */
+
+/* Before card inner box */
+.case-card.before div[style*="background:#f8f9fc"],
+.case-card.before div[style*="background:#f8f9fc"] {
+    background: rgba(17, 24, 39, 0.8) !important;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-light);
+}
+
+.case-card.before div[style*="background:#f8f9fc"] i {
+    color: var(--accent) !important;
+    font-size: 2rem;
+}
+
+.case-card.before div[style*="background:#f8f9fc"] p {
+    color: var(--text-muted) !important;
+}
+
+.case-card.before div[style*="background:#f8f9fc"] small {
+    color: var(--text-dim) !important;
+}
+
+/* After card inner box */
+.case-card.after div[style*="background:#fff7e8"],
+.case-card.after div[style*="background:#fff7e8"] {
+    background: rgba(249, 115, 22, 0.1) !important;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-light);
+}
+
+.case-card.after div[style*="background:#fff7e8"] i {
+    color: var(--accent) !important;
+    font-size: 2rem;
+}
+
+.case-card.after div[style*="background:#fff7e8"] p {
+    color: var(--text-primary) !important;
+}
+
+.case-card.after div[style*="background:#fff7e8"] small {
+    color: var(--text-muted) !important;
+}
+
+/* Ensure the lists inside case cards are visible */
+.case-card .progress-list li {
+    color: var(--text-muted);
+}
+
+.case-card .progress-list i.fa-check-circle {
+    color: #10b981;
+}
+
+.case-card .progress-list i.fa-times-circle {
+    color: #ef4444;
+}
+
+/* Metric highlight inside case cards */
+.case-card .metric-highlight {
+    background: rgba(249, 115, 22, 0.15);
+    color: var(--accent);
+}
+
     /* Responsive */
     @media (max-width: 768px) {
         .case-study-grid, .process-steps {
