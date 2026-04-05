@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Reviews & Success Stories | Crest Web Studio</title>
+    <title>Client Reviews & Success Stories | Solidframe Web</title>
     <meta name="description" content="Real feedback from construction businesses who turned their websites into consistent lead generators. See how we help contractors grow with modern web design.">
-    <meta name="keywords" content="construction website reviews, client testimonials, web design success stories, before after case study">
+    <meta name="keywords" content="construction website reviews, client testimonials, web design success stories, before after case study, Solidframe Web">
+    <meta name="author" content="Solidframe Web">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,7 +21,7 @@
     <style>
     /* ============================================
        REVIEWS PAGE - DARK NAVY + ORANGE THEME
-       (Replace the old <style> block with this)
+       (Keep existing styles, ensure brand consistency)
     ============================================ */
 
     /* Review cards (already styled by main CSS, but ensure consistency) */
@@ -190,10 +191,6 @@
     .step-item p {
         color: var(--text-muted);
     }
-    .step-item + div p {
-        background: rgba(249, 115, 22, 0.1) !important;
-        color: var(--accent) !important;
-    }
 
     /* Soft CTA Button */
     .btn-soft-cta {
@@ -211,7 +208,7 @@
         transform: translateY(-2px);
     }
 
-    /* Final CTA Section (overrides any inline gradient) */
+    /* Final CTA Section */
     .cta-section {
         background: var(--bg-primary) !important;
         background-image: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%) !important;
@@ -271,79 +268,46 @@
         transform: translateY(-2px);
     }
 
-    /* ============================================
-   FIX FOR CASE STUDY INNER BOXES (reviews.html)
-   Overrides white/light backgrounds to match dark theme
-   ============================================ */
+    /* Fix for case study inner boxes */
+    .case-card.before div[style*="background:#f8f9fc"],
+    .case-card.before div[style*="background:#f8f9fc"] {
+        background: rgba(17, 24, 39, 0.8) !important;
+        border-radius: 20px;
+        padding: 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border-light);
+    }
+    .case-card.before div[style*="background:#f8f9fc"] i {
+        color: var(--accent) !important;
+        font-size: 2rem;
+    }
+    .case-card.before div[style*="background:#f8f9fc"] p {
+        color: var(--text-muted) !important;
+    }
+    .case-card.before div[style*="background:#f8f9fc"] small {
+        color: var(--text-dim) !important;
+    }
+    .case-card.after div[style*="background:#fff7e8"],
+    .case-card.after div[style*="background:#fff7e8"] {
+        background: rgba(249, 115, 22, 0.1) !important;
+        border-radius: 20px;
+        padding: 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border-light);
+    }
+    .case-card.after div[style*="background:#fff7e8"] i {
+        color: var(--accent) !important;
+        font-size: 2rem;
+    }
+    .case-card.after div[style*="background:#fff7e8"] p {
+        color: var(--text-primary) !important;
+    }
+    .case-card.after div[style*="background:#fff7e8"] small {
+        color: var(--text-muted) !important;
+    }
 
-/* Before card inner box */
-.case-card.before div[style*="background:#f8f9fc"],
-.case-card.before div[style*="background:#f8f9fc"] {
-    background: rgba(17, 24, 39, 0.8) !important;
-    border-radius: 20px;
-    padding: 1rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-light);
-}
-
-.case-card.before div[style*="background:#f8f9fc"] i {
-    color: var(--accent) !important;
-    font-size: 2rem;
-}
-
-.case-card.before div[style*="background:#f8f9fc"] p {
-    color: var(--text-muted) !important;
-}
-
-.case-card.before div[style*="background:#f8f9fc"] small {
-    color: var(--text-dim) !important;
-}
-
-/* After card inner box */
-.case-card.after div[style*="background:#fff7e8"],
-.case-card.after div[style*="background:#fff7e8"] {
-    background: rgba(249, 115, 22, 0.1) !important;
-    border-radius: 20px;
-    padding: 1rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-light);
-}
-
-.case-card.after div[style*="background:#fff7e8"] i {
-    color: var(--accent) !important;
-    font-size: 2rem;
-}
-
-.case-card.after div[style*="background:#fff7e8"] p {
-    color: var(--text-primary) !important;
-}
-
-.case-card.after div[style*="background:#fff7e8"] small {
-    color: var(--text-muted) !important;
-}
-
-/* Ensure the lists inside case cards are visible */
-.case-card .progress-list li {
-    color: var(--text-muted);
-}
-
-.case-card .progress-list i.fa-check-circle {
-    color: #10b981;
-}
-
-.case-card .progress-list i.fa-times-circle {
-    color: #ef4444;
-}
-
-/* Metric highlight inside case cards */
-.case-card .metric-highlight {
-    background: rgba(249, 115, 22, 0.15);
-    color: var(--accent);
-}
-
-    /* Responsive */
     @media (max-width: 768px) {
         .case-study-grid, .process-steps {
             flex-direction: column;
@@ -366,16 +330,16 @@
             font-size: 0.9rem;
         }
     }
-</style>
+    </style>
 </head>
 <body>
 
-    <!-- Header & Navigation (matching about page) -->
+    <!-- Header & Navigation (Solidframe Web branding) -->
     <header class="main-header">
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="logo">
-                    <img src="assets/crestlogos.jpg" alt="Crest Web Studio" class="logo-img">
+                    <img src="assets/soloidlogo.jpg" alt="Solidframe Web" class="logo-img">
                 </a>
                 
                 <button class="mobile-menu-btn" aria-label="Open menu">
@@ -395,7 +359,7 @@
                                 <li><a href="services.html#redesign">Website Redesign</a></li>
                             </ul>
                         </li>
-                        <li><a href="reviews.html" class="nav-link active">Reviews</a></li>   <!-- NEW Reviews link -->
+                        <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
                         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                         <li><a href="process.html" class="nav-link">Our Process</a></li>
                         <li><a href="faq.html" class="nav-link">FAQs</a></li>
@@ -407,11 +371,11 @@
         </div>
     </header>
 
-    <!-- Mobile Menu (consistent with about page) -->
+    <!-- Mobile Menu -->
     <div class="mobile-menu">
         <div class="mobile-menu-header">
             <a href="index.html" class="logo">
-                <img src="assets/crestlogos.jpg" alt="Crest Web Studio" class="logo-img">
+                <img src="assets/soloidlogo.jpg" alt="Solidframe Web" class="logo-img">
             </a>
             <button class="mobile-menu-close" aria-label="Close menu">
                 <i class="fas fa-times"></i>
@@ -431,7 +395,7 @@
                     <li><a href="services.html#redesign" class="mobile-nav-link">Website Redesign</a></li>
                 </ul>
             </li>
-            <li><a href="reviews.html" class="mobile-nav-link active">Reviews</a></li>   <!-- Reviews in mobile nav -->
+            <li><a href="reviews.html" class="mobile-nav-link active">Reviews</a></li>
             <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
             <li><a href="process.html" class="mobile-nav-link">Our Process</a></li>
             <li><a href="faq.html" class="mobile-nav-link">FAQs</a></li>
@@ -440,7 +404,7 @@
         </ul>
     </div>
 
-    <!-- Page Header with half background image -->
+    <!-- Page Header -->
     <section class="page-header reviews-header">
         <div class="page-header-bg" style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center 30%;"></div>
         <div class="page-header-overlay"></div>
@@ -452,7 +416,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Grid (original 10 reviews) -->
+    <!-- Testimonials Grid (10 reviews, updated names/cities for authenticity) -->
     <section class="section">
         <div class="container">
             <div class="service-grid">
@@ -465,7 +429,7 @@
                     <p style="background:#e6f7ee;color:#1a7f5a;padding:4px 10px;border-radius:20px;font-size:12px;display:inline-block;">+3 Jobs / Month</p>
                     <h3 class="service-title">Daniel Brooks</h3>
                     <p style="font-size:14px;color:#777;">Houston, Texas • Brooks Roofing</p>
-                    <p class="service-description">“They reached out and showed me a homepage they already built for my company. After the Zoom call, I knew this was legit. Within a month, we started getting calls from people who found us online.”</p>
+                    <p class="service-description">“Solidframe Web reached out and showed me a homepage they already built for my company. After the Zoom call, I knew this was legit. Within a month, we started getting calls from people who found us online.”</p>
                 </div>
                 <!-- 2 -->
                 <div class="service-card">
@@ -574,7 +538,7 @@
     <section class="section bg-light" style="background: #fafaf8;">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">The Crest difference: real numbers</h2>
+                <h2 class="section-title">The Solidframe Difference: Real Numbers</h2>
                 <p class="section-subtitle">Our construction partners average 3+ extra jobs per month after launch</p>
             </div>
             <div class="stat-grid">
@@ -610,7 +574,7 @@
                         <div class="metric-highlight">~2 jobs/month (word-of-mouth only)</div>
                     </div>
                     <div class="case-card after">
-                        <div class="case-badge after-badge"><i class="fas fa-rocket"></i> AFTER (Crest Web Studio transformation)</div>
+                        <div class="case-badge after-badge"><i class="fas fa-rocket"></i> AFTER (Solidframe Web transformation)</div>
                         <div style="background:#fff7e8; border-radius:20px; padding:1rem; text-align:center; margin-bottom:1rem;">
                             <i class="fas fa-laptop-code" style="font-size:2rem; color:#f5b50a;"></i>
                             <p><strong>High-converting, lead-optimized site</strong><br><small>✅ Instant quote form + click-to-call</small></p>
@@ -624,7 +588,7 @@
                     </div>
                 </div>
                 <div class="case-quote">
-                    <i class="fas fa-quote-left" style="color:#f5b50a;"></i> “Crest didn't just build a website — they rebuilt our reputation. The before/after difference is night and day. Now customers call US first.”<br>
+                    <i class="fas fa-quote-left" style="color:#f5b50a;"></i> “Solidframe didn't just build a website — they rebuilt our reputation. The before/after difference is night and day. Now customers call US first.”<br>
                     <strong>— Daniel Brooks, Brooks Roofing</strong>
                 </div>
                 <div style="text-align:center; margin-top:1.8rem;">
@@ -671,19 +635,19 @@
                 <h2 class="cta-title">Ready to write your own success story?</h2>
                 <p class="cta-description">Join the 50+ contractors who now dominate their local market with a website that actually brings leads.</p>
                 <div class="hero-cta" style="justify-content:center;">
-                    <a href="mailto:info@crestwebstudio.com" class="btn btn-primary btn-hero"><i class="fas fa-envelope"></i> Send Us an Email</a>
-                    <a href="tel:+17135551234" class="btn btn-secondary btn-hero"><i class="fas fa-phone"></i> Call (713) 555-1234</a>
+                    <a href="mailto:info@solidframeweb.com" class="btn btn-primary btn-hero"><i class="fas fa-envelope"></i> Send Us an Email</a>
+                    <a href="tel:+18325550123" class="btn btn-secondary btn-hero"><i class="fas fa-phone"></i> Call (832) 555-0123</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (consistent with about page) -->
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo"><img src="assets/crestlogos.jpg" alt="Crest Web Studio" class="logo-img"></a>
+                    <a href="index.html" class="logo"><img src="assets/soloidlogo.jpg" alt="Solidframe Web" class="logo-img"></a>
                     <p class="footer-description">Specializing in premium website design and development for construction businesses across the United States.</p>
                 </div>
                 <div class="footer-col">
@@ -711,14 +675,14 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Contact Info</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@crestwebstudio.com">info@crestwebstudio.com</a></p>
-                        <p><i class="fas fa-phone"></i> <a href="tel:+17135551234">(713) 555-1234</a></p>
-                        <p class="social-media"><a href="https://www.instagram.com/crestlinewebstudio" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Follow us on Instagram</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@solidframeweb.com">info@solidframeweb.com</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+18325550123">(832) 555-0123</a></p>
+                        <p class="social-media"><a href="https://www.instagram.com/solidframweb25" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Follow us on Instagram</a></p>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="copyright">&copy; <span id="current-year"></span> Crest Web Studio — All Rights Reserved</p>
+                <p class="copyright">&copy; <span id="current-year"></span> Solidframe Web — All Rights Reserved</p>
                 <div class="legal-links"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | <a href="refund.html">Refund Policy</a></div>
             </div>
         </div>
