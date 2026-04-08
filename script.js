@@ -413,3 +413,22 @@
     }
   };
 })();
+
+// ===== LOGO CAROUSEL (TRUSTED BY) =====
+(function initLogoCarousel() {
+  const carousel = document.getElementById('logoCarousel');
+  if (!carousel) return;
+
+  // Clone all logo items and append them for seamless infinite scroll
+  const items = carousel.querySelectorAll('.logo-item');
+  items.forEach(item => {
+    const clone = item.cloneNode(true);
+    carousel.appendChild(clone);
+  });
+
+  // Optional: Adjust animation duration based on number of items for consistent speed
+  const totalItems = items.length * 2;
+  const baseSpeed = 30; // seconds for one full cycle (original set)
+  const duration = (totalItems / items.length) * baseSpeed;
+  carousel.style.animationDuration = duration + 's';
+})();
