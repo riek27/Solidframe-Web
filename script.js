@@ -414,21 +414,33 @@
   };
 })();
 
-// ===== LOGO CAROUSEL (TRUSTED BY) =====
+// ===== TRUSTED BY LOGO CAROUSEL – ROBUST CLONE & MOBILE FIX =====
 (function initLogoCarousel() {
   const carousel = document.getElementById('logoCarousel');
   if (!carousel) return;
 
-  // Clone all logo items and append them for seamless infinite scroll
+  // Clear any existing clones to avoid duplication on hot reload
+  const originalItems = Array.from(carousel.children);
+  
+  // Remove all children and re-add only original items (prevents duplicate clones)
+  carousel.innerHTML = '';
+  originalItems.forEach(item => carousel.appendChild(item.cloneNode(true)));
+  
+  // Now clone the freshly added items for seamless loop
   const items = carousel.querySelectorAll('.logo-item');
   items.forEach(item => {
     const clone = item.cloneNode(true);
     carousel.appendChild(clone);
   });
 
-  // Optional: Adjust animation duration based on number of items for consistent speed
-  const totalItems = items.length * 2;
-  const baseSpeed = 30; // seconds for one full cycle (original set)
-  const duration = (totalItems / items.length) * baseSpeed;
-  carousel.style.animationDuration = duration + 's';
+  // Set dynamic animation speed based on item count
+  function setAnimationDuration() {
+    const itemCount = items.length; // original items count
+    const baseSpeed = window.innerWidth <= 768 ? 20 : 30; // seconds
+    carousel.style.animationDuration = baseSpeed + 's';
+  }
+  setAnimationDuration();
+  
+  // Recalculate on window resize (optional)
+  window.addEventListener('resize', setAnimationDuration);
 })();
