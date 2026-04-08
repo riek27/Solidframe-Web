@@ -2683,39 +2683,40 @@ html {
     font-size: 1.2rem;
   }
 }
-/* ===== CONTACT PAGE FIXES ===== */
+/* ===== CONTACT PAGE – CLEAN FIX ===== */
 
-/* Ensure contact grid stacks on mobile */
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px;
-  }
-  
-  .contact-info-card {
-    padding: 24px;
-  }
-  
-  .contact-form {
-    padding: 28px !important;
-  }
-  
-  .map-container {
-    margin-top: 20px;
-  }
-  
-  .map-container iframe {
-    height: 220px;
-  }
+/* Contact Section Spacing */
+.contact.section {
+  padding: 80px 0;
 }
 
-/* Map responsiveness */
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* Left Column – Contact Info Card */
+.contact-info-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-100);
+  height: auto;
+  margin-bottom: 0;
+}
+
+/* Map Container – Separate from card with proper margin */
 .map-container {
-  width: 100%;
+  margin-top: 30px;
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--gray-100);
+  width: 100%;
 }
 
 .map-container iframe {
@@ -2725,7 +2726,23 @@ html {
   border: 0;
 }
 
-/* Contact method icon alignment */
+/* Right Column – Contact Form */
+.contact-form {
+  background: white;
+  border-radius: var(--radius-2xl);
+  padding: 40px;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--gray-100);
+}
+
+/* Contact Method Items */
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
 .contact-method-icon {
   width: 48px;
   height: 48px;
@@ -2744,12 +2761,30 @@ html {
   stroke: currentColor;
 }
 
-/* Social links inside contact card */
+.contact-method-content h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: var(--gray-800);
+}
+
+.contact-method-content p,
+.contact-method-content a {
+  color: var(--gray-500);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contact-method-content a:hover {
+  color: var(--accent);
+}
+
+/* Social Links in Contact Card */
 .contact-info-card .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  color: var(--gray-600);
 }
 
 .contact-info-card .social-link:hover {
@@ -2764,13 +2799,14 @@ html {
   fill: currentColor;
 }
 
-/* Contact form input consistency */
+/* Form Elements */
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   transition: var(--transition);
+  background: white;
 }
 
 .contact-form input:focus,
@@ -2781,7 +2817,7 @@ html {
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-/* Form submit button */
+/* Form Submit Button */
 .contact-form .form-submit {
   background: var(--gradient-1);
   color: white;
@@ -2796,66 +2832,94 @@ html {
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
 }
 
-/* Footer social links SVG sizing */
-.footer .social-link svg,
-.contact-socials .social-link svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-  transition: var(--transition);
+/* CTA Section Spacing (below contact) */
+.cta {
+  margin-top: 0;
+  padding: 80px 0;
 }
 
-.footer .social-link,
-.contact-socials .social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Footer */
+.footer {
+  margin-top: 0;
 }
 
-/* Ensure all text is visible (override any lingering opacity issues) */
-.contact-info-card,
-.contact-form,
-.map-container {
+/* ===== RESPONSIVE FIXES ===== */
+@media (max-width: 1024px) {
+  .contact-grid {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact.section {
+    padding: 60px 0;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+
+  .contact-info-card {
+    padding: 28px 24px;
+  }
+
+  .contact-form {
+    padding: 30px 24px;
+  }
+
+  .map-container {
+    margin-top: 24px;
+  }
+
+  .map-container iframe {
+    height: 220px;
+  }
+
+  .cta {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info-card {
+    padding: 24px 20px;
+  }
+
+  .contact-form {
+    padding: 24px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .map-container iframe {
+    height: 200px;
+  }
+}
+
+/* Ensure no overlap with fixed header */
+.page-header {
+  padding-top: 140px;
+}
+
+/* Make fade elements visible immediately (override any animation hiding) */
+.fade-in-left,
+.fade-in-right,
+.fade-in {
   opacity: 1 !important;
+  transform: none !important;
   visibility: visible !important;
 }
 
-/* Fix for fade animations on contact page */
-.fade-in-left,
-.fade-in-right {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-/* Contact method text links */
-.contact-method-content a {
-  color: var(--gray-700);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.contact-method-content a:hover {
-  color: var(--accent);
-}
-
-/* Ensure the page header has proper spacing */
-.page-header {
-  position: relative;
-  z-index: 1;
-}
-
-/* Fix any overflow issues */
+/* Fix any potential overflow */
 body {
   overflow-x: hidden;
 }
 
-/* Contact grid gap adjustment */
-.contact-grid {
-  gap: 40px;
-}
-
-@media (min-width: 1024px) {
-  .contact-grid {
-    gap: 60px;
-  }
+/* Clear spacing between sections */
+section {
+  position: relative;
+  z-index: 1;
 }
