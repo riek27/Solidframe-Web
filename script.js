@@ -1,418 +1,346 @@
-// ===========================================
-// CREST WEB STUDIO - MAIN JAVASCRIPT
-// All features: mobile menu, FAQ, blog, contact form, stats, etc.
-// ===========================================
+(function() {
+  "use strict";
 
-document.addEventListener('DOMContentLoaded', function() {
-    // ===========================================
-    // 1. TYPING EFFECT FOR HERO SECTION (Index page)
-    // ===========================================
-    const typedText = document.getElementById('typed-text');
-    if (typedText) {
-        const typingStrings = [
-            "Custom websites built for construction companies.",
-            "SEO-optimized to rank higher in local searches.",
-            "Mobile-first designs for on-site accessibility.",
-            "Lead-generating websites that grow your business."
-        ];
-        
-        let stringIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
-        
-        function typeText() {
-            const currentString = typingStrings[stringIndex];
-            
-            if (isDeleting) {
-                typedText.textContent = currentString.substring(0, charIndex - 1);
-                charIndex--;
-                typingSpeed = 50;
-            } else {
-                typedText.textContent = currentString.substring(0, charIndex + 1);
-                charIndex++;
-                typingSpeed = 100;
-            }
-            
-            if (!isDeleting && charIndex === currentString.length) {
-                typingSpeed = 1500;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                stringIndex = (stringIndex + 1) % typingStrings.length;
-                typingSpeed = 500;
-            }
-            
-            setTimeout(typeText, typingSpeed);
-        }
-        
-        setTimeout(typeText, 1000);
-    }
+  // ===== UTILITIES =====
+  const $ = (selector, context = document) => context.querySelector(selector);
+  const $$ = (selector, context = document) => context.querySelectorAll(selector);
 
-    // ===========================================
-    // 2. MOBILE MENU FUNCTIONALITY
-    // ===========================================
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenuClose = document.querySelector('.mobile-menu-close');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
-    
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-    
-    if (mobileMenuClose && mobileMenu) {
-        mobileMenuClose.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
-    
-    // Close mobile menu when clicking on any link (except dropdown toggles)
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link:not(.mobile-dropdown-toggle)');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (mobileMenu) {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    });
-    
-    // Mobile dropdown toggle (Services submenu)
-    mobileDropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            const parent = toggle.closest('.mobile-has-dropdown');
-            const dropdown = parent ? parent.querySelector('.mobile-dropdown') : null;
-            if (dropdown) {
-                dropdown.classList.toggle('active');
-                const icon = toggle.querySelector('i');
-                if (icon) {
-                    icon.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
-                }
-            }
-        });
-    });
-    
-    // ===========================================
-    // 3. DESKTOP DROPDOWN (Services)
-    // ===========================================
-    const desktopDropdowns = document.querySelectorAll('.has-dropdown');
-    desktopDropdowns.forEach(dropdown => {
-        const dropdownMenu = dropdown.querySelector('.dropdown');
-        if (dropdownMenu) {
-            dropdown.addEventListener('mouseenter', () => {
-                dropdownMenu.style.opacity = '1';
-                dropdownMenu.style.visibility = 'visible';
-                dropdownMenu.style.transform = 'translateY(0)';
-            });
-            
-            dropdown.addEventListener('mouseleave', () => {
-                dropdownMenu.style.opacity = '0';
-                dropdownMenu.style.visibility = 'hidden';
-                dropdownMenu.style.transform = 'translateY(10px)';
-            });
+  // ===== NAVBAR SCROLL EFFECT =====
+  const navbar = $('#navbar');
+  const scrollTopBtn = $('#scrollTop');
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      if (scrollTopBtn) {
+        if (window.scrollY > 500) {
+          scrollTopBtn.classList.add('visible');
+        } else {
+          scrollTopBtn.classList.remove('visible');
         }
+      }
+    });
+  }
+
+  // ===== SCROLL TO TOP =====
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ===== MOBILE MENU =====
+  const navToggle = $('#navToggle');
+  const navMain = $('#navMain');
+  const mobileOverlay = $('#mobileOverlay');
+  
+  if (navToggle && navMain && mobileOverlay) {
+    const closeMenu = () => {
+      navToggle.classList.remove('active');
+      navMain.classList.remove('open');
+      mobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    const openMenu = () => {
+      navToggle.classList.add('active');
+      navMain.classList.add('open');
+      mobileOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    navToggle.addEventListener('click', () => {
+      if (navMain.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    mobileOverlay.addEventListener('click', closeMenu);
+
+    // Close menu when a nav link is clicked (mobile)
+    $$('.nav-link, .nav-quote-btn, .dropdown-item').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          closeMenu();
+        }
+      });
+    });
+
+    // Mobile dropdown toggle
+    $$('.nav-dropdown > .nav-link').forEach(dropdownToggle => {
+      dropdownToggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parent = dropdownToggle.closest('.nav-dropdown');
+          if (parent) {
+            parent.classList.toggle('open');
+          }
+        }
+      });
+    });
+  }
+
+  // ===== FAQ TOGGLE =====
+  window.toggleFaq = function(element) {
+    const faqItem = element.closest('.faq-item');
+    if (!faqItem) return;
+    
+    const isActive = faqItem.classList.contains('active');
+    
+    // Optional: close others in the same category? Not required, but we can keep independent.
+    // For better UX, we'll allow multiple open, or you can uncomment below to accordion.
+    /*
+    const parentCategory = faqItem.closest('.faq-category');
+    if (parentCategory) {
+      $$('.faq-item', parentCategory).forEach(item => item.classList.remove('active'));
+    }
+    */
+    
+    if (!isActive) {
+      faqItem.classList.add('active');
+    } else {
+      faqItem.classList.remove('active');
+    }
+  };
+
+  // Also attach click listeners to all FAQ questions (in case inline onclick not used)
+  $$('.faq-question').forEach(question => {
+    question.addEventListener('click', function(e) {
+      // If the click was on the toggle icon or the question, we handle.
+      const faqItem = this.closest('.faq-item');
+      if (faqItem) {
+        faqItem.classList.toggle('active');
+      }
+    });
+  });
+
+  // ===== READ MORE / LESS (Blog) =====
+  $$('.read-more-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = this.dataset.target;
+      if (!targetId) return;
+      
+      const excerpt = $(`#${targetId}-excerpt`);
+      const full = $(`#${targetId}-full`);
+      
+      if (!excerpt || !full) return;
+      
+      if (full.style.display === 'none' || getComputedStyle(full).display === 'none') {
+        full.style.display = 'block';
+        excerpt.style.display = 'none';
+        this.textContent = 'Read Less';
+      } else {
+        full.style.display = 'none';
+        excerpt.style.display = 'block';
+        this.textContent = 'Read More';
+      }
+    });
+  });
+
+  // ===== FORM SUBMIT SIMULATION =====
+  $$('form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Basic validation (HTML5 handles required, but we can add more)
+      const btn = $('.form-submit', form);
+      if (!btn) return;
+      
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '✅ Message Sent!';
+      btn.style.background = '#22c55e';
+      btn.disabled = true;
+      
+      // Optionally clear form
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+        form.reset();
+      }, 3000);
+    });
+  });
+
+  // ===== INTERSECTION OBSERVER FOR FADE ANIMATIONS =====
+  const animatedElements = $$('.fade-in, .fade-in-left, .fade-in-right');
+  if (animatedElements.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // only animate once
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    
+    animatedElements.forEach(el => observer.observe(el));
+  }
+
+  // ===== ACTIVE NAV LINK HIGHLIGHTING =====
+  function setActiveNavLink() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = $$('.nav-link');
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      
+      // Remove active class from all
+      link.classList.remove('active');
+      
+      // Check if href matches current page
+      if (href === currentPath || 
+          (currentPath === '' && href === 'index.html') ||
+          (currentPath === 'index.html' && href === 'index.html') ||
+          (href.includes(currentPath) && currentPath !== '')) {
+        link.classList.add('active');
+      }
     });
     
-    // ===========================================
-    // 4. FAQ ACCORDION (for both pricing and FAQ pages)
-    // ===========================================
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const faqItem = question.parentElement; // .faq-item
-            const isActive = faqItem.classList.contains('active');
-            
-            // Optional: close all others (for better UX)
-            document.querySelectorAll('.faq-item').forEach(item => {
-                if (item !== faqItem) {
-                    item.classList.remove('active');
-                }
-            });
-            
-            // Toggle current
-            faqItem.classList.toggle('active');
-        });
+    // Also handle dropdown parent active state if needed
+    const dropdownParents = $$('.nav-dropdown');
+    dropdownParents.forEach(drop => {
+      const link = $('.nav-link', drop);
+      const activeChild = $('.dropdown-item.active', drop);
+      if (activeChild) {
+        link.classList.add('active');
+      }
     });
+  }
+  setActiveNavLink();
+
+  // Also update active on scroll for single-page sections (index only)
+  if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+    const sections = $$('section[id]');
+    const navLinks = $$('.nav-links .nav-link');
     
-    // ===========================================
-    // 5. BLOG READ MORE / READ LESS BUTTONS
-    // ===========================================
-    const readMoreBtns = document.querySelectorAll('.btn-read-more');
-    readMoreBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const blogCard = btn.closest('.blog-card');
-            const fullContent = blogCard ? blogCard.querySelector('.blog-full-content') : null;
-            if (fullContent) {
-                fullContent.classList.toggle('active');
-                btn.classList.toggle('active');
-                btn.innerHTML = fullContent.classList.contains('active') ? 
-                    'Read Less <i class="fas fa-chevron-up"></i>' : 
-                    'Read More <i class="fas fa-chevron-down"></i>';
-            }
-        });
-    });
+    const scrollHandler = () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href && href.substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    };
     
-    // ===========================================
-    // 6. ANIMATED COUNTER FOR STATS
-    // ===========================================
-    const statNumbers = document.querySelectorAll('.stat-number');
-    
-    function animateCounter(element) {
-        const targetText = element.getAttribute('data-count');
-        // If no data-count, try to parse the text content (removing non-digits)
-        let target = targetText ? parseInt(targetText) : parseInt(element.textContent.replace(/[^0-9]/g, ''));
-        if (isNaN(target)) return;
+    window.addEventListener('scroll', scrollHandler);
+    scrollHandler(); // initial call
+  }
+
+  // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+  $$('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#' || href === '#!' || !href.startsWith('#')) return;
+      
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({ behavior: 'smooth' });
         
-        let current = 0;
-        const duration = 1500; // ms
-        const stepTime = 20;
-        const steps = duration / stepTime;
-        const increment = target / steps;
-        
-        let currentStep = 0;
-        const timer = setInterval(() => {
-            currentStep++;
+        // Update URL without jump
+        history.pushState(null, null, href);
+      }
+    });
+  });
+
+  // ===== COUNTER ANIMATION (Hero Stats) =====
+  const statNumbers = $$('.hero-stat-number');
+  if (statNumbers.length > 0) {
+    const animateCounters = () => {
+      statNumbers.forEach(counter => {
+        const text = counter.textContent;
+        if (text.includes('+')) {
+          const target = parseInt(text.replace(/\D/g, ''));
+          if (isNaN(target)) return;
+          
+          let current = 0;
+          const increment = Math.ceil(target / 40);
+          const timer = setInterval(() => {
             current += increment;
-            if (currentStep >= steps) {
-                element.textContent = target;
-                clearInterval(timer);
+            if (current >= target) {
+              counter.textContent = target + '+';
+              clearInterval(timer);
             } else {
-                element.textContent = Math.floor(current);
+              counter.textContent = current + '+';
             }
-        }, stepTime);
-    }
+          }, 25);
+        }
+      });
+    };
     
-    // Intersection Observer for stats
-    const statsObserver = new IntersectionObserver((entries) => {
+    const heroStatsSection = $('.hero-stats');
+    if (heroStatsSection) {
+      const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            heroObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      heroObserver.observe(heroStatsSection);
+    } else {
+      // If no hero-stats wrapper, just observe first stat's parent
+      const firstStat = statNumbers[0];
+      if (firstStat) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const stat = entry.target;
-                if (!stat.classList.contains('animated')) {
-                    stat.classList.add('animated');
-                    animateCounter(stat);
-                }
-                statsObserver.unobserve(stat);
+              animateCounters();
+              observer.unobserve(entry.target);
             }
-        });
-    }, { threshold: 0.5 });
-    
-    statNumbers.forEach(stat => {
-        statsObserver.observe(stat);
-    });
-    
-    // ===========================================
-    // 7. UPDATE CURRENT YEAR IN FOOTER
-    // ===========================================
-    const currentYearElement = document.getElementById('current-year');
-    if (currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
+          });
+        }, { threshold: 0.5 });
+        observer.observe(firstStat.closest('.hero-stats') || firstStat);
+      }
     }
-    
-    // ===========================================
-    // 8. HEADER SCROLL EFFECT (adds shadow / background)
-    // ===========================================
-    const header = document.querySelector('.main-header');
-    if (header) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    }
-    
-    // ===========================================
-    // 9. SMOOTH SCROLLING FOR ANCHOR LINKS
-    // ===========================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#' || targetId === '') return;
-            
-            // Skip if it's an external link or contains .html
-            if (targetId.includes('.html')) return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                const offset = 80; // fixed header height
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - offset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // ===========================================
-    // 10. ACTIVE NAV LINK HIGHLIGHTING (based on scroll)
-    // ===========================================
-    function highlightNavOnScroll() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
-        
-        let currentSectionId = '';
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 150 && rect.bottom >= 150) {
-                currentSectionId = section.id;
-            }
-        });
-        
-        navLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === `#${currentSectionId}`) {
-                link.classList.add('active');
-            } else if (href !== '#' && !href?.startsWith('#')) {
-                // For non-anchor links, don't remove active if it's a page link
-                // Only remove if it's not the current section
-                if (!currentSectionId) return;
-                link.classList.remove('active');
-            }
-        });
-    }
-    
-    window.addEventListener('scroll', highlightNavOnScroll);
-    highlightNavOnScroll();
-    
-    // ===========================================
-    // 11. PRICING PAGE CARD HOVER (enhanced)
-    // ===========================================
-    const pricingCards = document.querySelectorAll('.pricing-card');
-    pricingCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            if (card.classList.contains('featured')) {
-                card.style.transform = 'scale(1.02) translateY(-8px)';
-            }
-        });
-        card.addEventListener('mouseleave', () => {
-            if (card.classList.contains('featured')) {
-                card.style.transform = 'scale(1.02)';
-            } else {
-                card.style.transform = '';
-            }
-        });
-    });
-    
-    // ===========================================
-    // 12. BLOG CARD IMAGE ZOOM (already done in CSS, but ensure consistency)
-    // ===========================================
-    const blogImages = document.querySelectorAll('.blog-image img');
-    blogImages.forEach(img => {
-        img.addEventListener('mouseenter', () => {
-            img.style.transform = 'scale(1.05)';
-        });
-        img.addEventListener('mouseleave', () => {
-            img.style.transform = 'scale(1)';
-        });
-    });
-    
-    // ===========================================
-    // 13. CONTACT FORM SUBMISSION (Netlify)
-    // ===========================================
-    const contactForm = document.getElementById('contactForm');
-    const contactSuccess = document.getElementById('contact-success');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            
-            fetch('/', {
-                method: 'POST',
-                body: new URLSearchParams(formData),
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-            })
-            .then(() => {
-                if (contactSuccess) {
-                    contactSuccess.classList.add('show');
-                    setTimeout(() => {
-                        contactSuccess.classList.remove('show');
-                    }, 5000);
-                }
-                contactForm.reset();
-            })
-            .catch(error => {
-                alert('Oops! There was a problem submitting your form. Please try again or call us directly.');
-                console.error('Form submission error:', error);
-            });
-        });
-    }
-    
-    // Also handle newsletter form if present on blog page
-    const newsletterForm = document.getElementById('newsletterForm');
-    const newsletterSuccess = document.getElementById('newsletter-success');
-    
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(newsletterForm);
-            
-            fetch('/', {
-                method: 'POST',
-                body: new URLSearchParams(formData),
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-            })
-            .then(() => {
-                if (newsletterSuccess) {
-                    newsletterSuccess.style.display = 'block';
-                    setTimeout(() => {
-                        newsletterSuccess.style.opacity = '1';
-                    }, 10);
-                    setTimeout(() => {
-                        newsletterSuccess.style.opacity = '0';
-                        setTimeout(() => {
-                            newsletterSuccess.style.display = 'none';
-                        }, 500);
-                    }, 5000);
-                }
-                newsletterForm.reset();
-            })
-            .catch(error => {
-                alert('Subscription failed. Please try again.');
-                console.error(error);
-            });
-        });
-    }
-    
-    // ===========================================
-    // 14. LAZY LOADING FOR IMAGES (optional)
-    // ===========================================
-    const lazyImages = document.querySelectorAll('img[data-src]');
-    if (lazyImages.length) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.add('loaded');
-                    observer.unobserve(img);
-                }
-            });
-        });
-        lazyImages.forEach(img => imageObserver.observe(img));
-    }
-    
-    // ===========================================
-    // 15. FIX FOR ANY MISSING CLICK HANDLERS ON FAQ (backup)
-    // ===========================================
-    // If any FAQ items are not working due to dynamic content, re-run
-    const dynamicFaqQuestions = document.querySelectorAll('.faq-question');
-    if (dynamicFaqQuestions.length && !window._faqInitialized) {
-        window._faqInitialized = true;
-        // Already handled above, but ensure no duplicates
-    }
-});
+  }
 
+  // ===== ADDITIONAL: CLOSE MOBILE MENU ON ESCAPE =====
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMain && navMain.classList.contains('open')) {
+      navToggle?.classList.remove('active');
+      navMain.classList.remove('open');
+      mobileOverlay?.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // ===== PRICING CARD HOVER EFFECT (already in CSS) =====
+  // No extra JS needed.
+
+  // ===== INITIAL CHECK FOR SCROLLED CLASS ON PAGE LOAD =====
+  if (navbar) {
+    if (window.scrollY > 80) navbar.classList.add('scrolled');
+  }
+  if (scrollTopBtn) {
+    if (window.scrollY > 500) scrollTopBtn.classList.add('visible');
+  }
+
+  // ===== FIX FOR DROPDOWN MENU ON DESKTOP: ensure hover works, no JS needed =====
+  // But we need to prevent default if href is just "#" for dropdown toggles
+  $$('.nav-dropdown > .nav-link').forEach(link => {
+    if (link.getAttribute('href') === '#') {
+      link.addEventListener('click', (e) => e.preventDefault());
+    }
+  });
+
+})();
