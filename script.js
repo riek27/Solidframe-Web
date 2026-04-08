@@ -345,3 +345,71 @@
   });
 
 })();
+
+// ===== ENHANCED FAQ TOGGLE (ACCORDION STYLE) =====
+(function initFaqAccordion() {
+  // Select all FAQ items (both pricing page and main FAQ page)
+  const allFaqItems = document.querySelectorAll('.faq-item');
+  
+  if (allFaqItems.length === 0) return;
+
+  // Function to close all FAQs within the same container (optional accordion)
+  function closeSiblingFaqs(currentFaq) {
+    const parentContainer = currentFaq.closest('.faq-items, .faq-category, .pricing .faq-items, .faq .faq-items');
+    if (!parentContainer) return;
+    
+    const siblingFaqs = parentContainer.querySelectorAll('.faq-item');
+    siblingFaqs.forEach(item => {
+      if (item !== currentFaq) {
+        item.classList.remove('active');
+      }
+    });
+  }
+
+  // Toggle function
+  function handleFaqClick(e) {
+    const faqItem = e.currentTarget.closest('.faq-item');
+    if (!faqItem) return;
+    
+    // If you want accordion behavior (only one open at a time), uncomment next line:
+    // closeSiblingFaqs(faqItem);
+    
+    // Toggle current
+    faqItem.classList.toggle('active');
+  }
+
+  // Attach click listener to each FAQ question
+  allFaqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    if (question) {
+      // Remove any existing inline onclick to avoid double triggers
+      question.removeAttribute('onclick');
+      question.addEventListener('click', handleFaqClick);
+    }
+  });
+
+  // Also handle any dynamically added FAQ items (if needed)
+  // Using event delegation on a common container
+  document.body.addEventListener('click', (e) => {
+    const question = e.target.closest('.faq-question');
+    if (!question) return;
+    
+    const faqItem = question.closest('.faq-item');
+    if (!faqItem) return;
+    
+    // Prevent if the click was on a nested link/button
+    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+    
+    // Toggle (accordion behavior optional)
+    // closeSiblingFaqs(faqItem);
+    faqItem.classList.toggle('active');
+  });
+
+  // Ensure the global toggleFaq function still works if called from inline
+  window.toggleFaq = function(element) {
+    const faqItem = element.closest('.faq-item');
+    if (faqItem) {
+      faqItem.classList.toggle('active');
+    }
+  };
+})();
