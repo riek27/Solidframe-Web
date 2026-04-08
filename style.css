@@ -2418,3 +2418,136 @@ html {
 .js-loaded .fade-in-right {
   transform: translateX(40px);
 }
+/* ===== MOBILE FIXES – STACK ALL GRIDS TO SINGLE COLUMN ===== */
+@media (max-width: 768px) {
+
+  /* ----- ABOUT PAGE ----- */
+  /* Mission & Vision grid (two columns on desktop) */
+  .mission-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  /* Expertise grid (three columns on desktop) */
+  .expertise-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  /* ----- SERVICES PAGE ----- */
+  /* Benefits grid (Why Choose Us) – three columns desktop */
+  .benefits-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  /* Results grid (Real Results) – three columns desktop */
+  .results-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  /* ----- PROCESS PAGE ----- */
+  /* Process timeline (5 columns desktop) */
+  .process-timeline {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+    max-width: 100%;
+  }
+  /* Remove the connecting line on mobile */
+  .process-timeline::before {
+    display: none !important;
+  }
+
+  /* Process detail cards (2 columns desktop) */
+  .details-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+  /* Make the full‑width card span normally */
+  .detail-card[style*="grid-column"] {
+    grid-column: span 1 !important;
+  }
+
+  /* ----- PRICING PAGE ----- */
+  /* Pricing cards (3 columns desktop) */
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Add‑ons grid (5 columns desktop) */
+  .addons .container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  /* What's Included flex wrap (already wraps, but ensure it's centered) */
+  .whats-included .container > div[style*="flex-wrap"] {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* ----- FAQ PAGE (already good, but ensure categories stack) ----- */
+  .faq-category {
+    margin-bottom: 40px;
+  }
+
+  /* ----- BLOG PAGE (already single column at 768px) ----- */
+  /* ----- CONTACT PAGE (already single column) ----- */
+
+  /* ----- GENERAL FIXES ----- */
+  /* Ensure all grid containers become single column */
+  .industries-grid,
+  .services-grid,
+  .testimonials-grid,
+  .blog-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Center single‑column cards and add spacing */
+  .industry-card,
+  .service-card,
+  .testimonial-card,
+  .blog-card,
+  .pricing-card,
+  .benefit-card,
+  .result-card,
+  .expertise-card,
+  .mission-card,
+  .vision-card {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 420px;
+    width: 100%;
+  }
+
+  /* Process step cards centering */
+  .process-step {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Add‑on items */
+  .addon-item {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Footer grid stacking (already handled, but enforce) */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+  .footer-brand p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-socials {
+    justify-content: center;
+  }
+}
