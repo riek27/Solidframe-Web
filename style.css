@@ -2683,3 +2683,179 @@ html {
     font-size: 1.2rem;
   }
 }
+/* ===== CONTACT PAGE FIXES ===== */
+
+/* Ensure contact grid stacks on mobile */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+  
+  .contact-info-card {
+    padding: 24px;
+  }
+  
+  .contact-form {
+    padding: 28px !important;
+  }
+  
+  .map-container {
+    margin-top: 20px;
+  }
+  
+  .map-container iframe {
+    height: 220px;
+  }
+}
+
+/* Map responsiveness */
+.map-container {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-100);
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 250px;
+  border: 0;
+}
+
+/* Contact method icon alignment */
+.contact-method-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.contact-method-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+
+/* Social links inside contact card */
+.contact-info-card .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.contact-info-card .social-link:hover {
+  background: var(--accent) !important;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.contact-info-card .social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Contact form input consistency */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Form submit button */
+.contact-form .form-submit {
+  background: var(--gradient-1);
+  color: white;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.contact-form .form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Footer social links SVG sizing */
+.footer .social-link svg,
+.contact-socials .social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: var(--transition);
+}
+
+.footer .social-link,
+.contact-socials .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure all text is visible (override any lingering opacity issues) */
+.contact-info-card,
+.contact-form,
+.map-container {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for fade animations on contact page */
+.fade-in-left,
+.fade-in-right {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Contact method text links */
+.contact-method-content a {
+  color: var(--gray-700);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-method-content a:hover {
+  color: var(--accent);
+}
+
+/* Ensure the page header has proper spacing */
+.page-header {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix any overflow issues */
+body {
+  overflow-x: hidden;
+}
+
+/* Contact grid gap adjustment */
+.contact-grid {
+  gap: 40px;
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    gap: 60px;
+  }
+}
