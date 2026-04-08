@@ -2551,3 +2551,88 @@ html {
     justify-content: center;
   }
 }
+
+/* ===== TRUSTED BY LOGO CAROUSEL ===== */
+.trusted-by {
+  background: var(--white);
+  padding: 60px 0;
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.trusted-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.trusted-header .section-label {
+  justify-content: center;
+}
+
+.logo-carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-carousel {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: scrollLogos 30s linear infinite;
+  padding: 10px 0;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  white-space: nowrap;
+  background: var(--gray-50);
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 1px solid var(--gray-200);
+  transition: var(--transition);
+}
+
+.logo-item span {
+  font-size: 1.5rem;
+}
+
+.logo-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pause animation on hover */
+.logo-carousel-wrapper:hover .logo-carousel {
+  animation-play-state: paused;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .trusted-by {
+    padding: 40px 0;
+  }
+  .logo-carousel {
+    gap: 24px;
+  }
+  .logo-item {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  .logo-item span {
+    font-size: 1.2rem;
+  }
+}
