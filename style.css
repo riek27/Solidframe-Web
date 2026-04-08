@@ -2636,3 +2636,50 @@ html {
     font-size: 1.2rem;
   }
 }
+/* ===== TRUSTED BY CAROUSEL – MOBILE FIX ===== */
+.logo-carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  /* Ensure mask works on all browsers */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-carousel {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: scrollLogos 30s linear infinite;
+  padding: 10px 0;
+  /* Force hardware acceleration for smooth mobile animation */
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover/touch */
+.logo-carousel-wrapper:hover .logo-carousel,
+.logo-carousel-wrapper:active .logo-carousel {
+  animation-play-state: paused;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .logo-carousel {
+    gap: 24px;
+    animation-duration: 20s; /* faster on mobile for better perception */
+  }
+  .logo-item {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  .logo-item span {
+    font-size: 1.2rem;
+  }
+}
