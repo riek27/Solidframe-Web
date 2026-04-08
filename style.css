@@ -2387,3 +2387,34 @@ html {
   scroll-padding-top: 100px;
 }
 
+/* Fallback: make fade-in elements visible even without JS */
+.fade-in,
+.fade-in-left,
+.fade-in-right {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Once JS loads and adds .visible, we can still animate if desired */
+.js-loaded .fade-in,
+.js-loaded .fade-in-left,
+.js-loaded .fade-in-right {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-loaded .fade-in.visible,
+.js-loaded .fade-in-left.visible,
+.js-loaded .fade-in-right.visible {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* For left/right animations */
+.js-loaded .fade-in-left {
+  transform: translateX(-40px);
+}
+.js-loaded .fade-in-right {
+  transform: translateX(40px);
+}
