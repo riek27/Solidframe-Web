@@ -32,6 +32,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+  document.body.classList.add('js-loaded');
 
   // ===== MOBILE MENU =====
   const navToggle = $('#navToggle');
