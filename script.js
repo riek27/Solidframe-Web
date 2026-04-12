@@ -91,29 +91,11 @@
   window.toggleFaq = function(element) {
     const faqItem = element.closest('.faq-item');
     if (!faqItem) return;
-    
-    const isActive = faqItem.classList.contains('active');
-    
-    // Optional: close others in the same category? Not required, but we can keep independent.
-    // For better UX, we'll allow multiple open, or you can uncomment below to accordion.
-    /*
-    const parentCategory = faqItem.closest('.faq-category');
-    if (parentCategory) {
-      $$('.faq-item', parentCategory).forEach(item => item.classList.remove('active'));
-    }
-    */
-    
-    if (!isActive) {
-      faqItem.classList.add('active');
-    } else {
-      faqItem.classList.remove('active');
-    }
+    faqItem.classList.toggle('active');
   };
 
-  // Also attach click listeners to all FAQ questions (in case inline onclick not used)
   $$('.faq-question').forEach(question => {
     question.addEventListener('click', function(e) {
-      // If the click was on the toggle icon or the question, we handle.
       const faqItem = this.closest('.faq-item');
       if (faqItem) {
         faqItem.classList.toggle('active');
@@ -149,7 +131,6 @@
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Basic validation (HTML5 handles required, but we can add more)
       const btn = $('.form-submit', form);
       if (!btn) return;
       
@@ -158,7 +139,6 @@
       btn.style.background = '#22c55e';
       btn.disabled = true;
       
-      // Optionally clear form
       setTimeout(() => {
         btn.innerHTML = originalText;
         btn.style.background = '';
@@ -175,7 +155,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // only animate once
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
@@ -192,10 +172,8 @@
       const href = link.getAttribute('href');
       if (!href) return;
       
-      // Remove active class from all
       link.classList.remove('active');
       
-      // Check if href matches current page
       if (href === currentPath || 
           (currentPath === '' && href === 'index.html') ||
           (currentPath === 'index.html' && href === 'index.html') ||
@@ -203,45 +181,8 @@
         link.classList.add('active');
       }
     });
-    
-    // Also handle dropdown parent active state if needed
-    const dropdownParents = $$('.nav-dropdown');
-    dropdownParents.forEach(drop => {
-      const link = $('.nav-link', drop);
-      const activeChild = $('.dropdown-item.active', drop);
-      if (activeChild) {
-        link.classList.add('active');
-      }
-    });
   }
   setActiveNavLink();
-
-  // Also update active on scroll for single-page sections (index only)
-  if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
-    const sections = $$('section[id]');
-    const navLinks = $$('.nav-links .nav-link');
-    
-    const scrollHandler = () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        const href = link.getAttribute('href');
-        if (href && href.substring(1) === current) {
-          link.classList.add('active');
-        }
-      });
-    };
-    
-    window.addEventListener('scroll', scrollHandler);
-    scrollHandler(); // initial call
-  }
 
   // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
   $$('a[href^="#"]').forEach(anchor => {
@@ -255,8 +196,6 @@
       if (targetElement) {
         e.preventDefault();
         targetElement.scrollIntoView({ behavior: 'smooth' });
-        
-        // Update URL without jump
         history.pushState(null, null, href);
       }
     });
@@ -298,24 +237,10 @@
         });
       }, { threshold: 0.5 });
       heroObserver.observe(heroStatsSection);
-    } else {
-      // If no hero-stats wrapper, just observe first stat's parent
-      const firstStat = statNumbers[0];
-      if (firstStat) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateCounters();
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.5 });
-        observer.observe(firstStat.closest('.hero-stats') || firstStat);
-      }
     }
   }
 
-  // ===== ADDITIONAL: CLOSE MOBILE MENU ON ESCAPE =====
+  // ===== CLOSE MOBILE MENU ON ESCAPE =====
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navMain && navMain.classList.contains('open')) {
       navToggle?.classList.remove('active');
@@ -325,10 +250,7 @@
     }
   });
 
-  // ===== PRICING CARD HOVER EFFECT (already in CSS) =====
-  // No extra JS needed.
-
-  // ===== INITIAL CHECK FOR SCROLLED CLASS ON PAGE LOAD =====
+  // ===== INITIAL SCROLL STATE =====
   if (navbar) {
     if (window.scrollY > 80) navbar.classList.add('scrolled');
   }
@@ -336,111 +258,84 @@
     if (window.scrollY > 500) scrollTopBtn.classList.add('visible');
   }
 
-  // ===== FIX FOR DROPDOWN MENU ON DESKTOP: ensure hover works, no JS needed =====
-  // But we need to prevent default if href is just "#" for dropdown toggles
-  $$('.nav-dropdown > .nav-link').forEach(link => {
-    if (link.getAttribute('href') === '#') {
-      link.addEventListener('click', (e) => e.preventDefault());
+  // ===== DROPDOWN TOGGLE (DESKTOP & MOBILE) – PREVENT NAVIGATION =====
+  $$('.nav-dropdown > .nav-link').forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', (e) => {
+      // If it's the Services link (or any with a dropdown), prevent navigation
+      const parentDropdown = dropdownToggle.closest('.nav-dropdown');
+      if (parentDropdown) {
+        e.preventDefault(); // Stop the link from navigating to services.html
+        parentDropdown.classList.toggle('open');
+      }
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) {
+      $$('.nav-dropdown').forEach(drop => drop.classList.remove('open'));
     }
   });
+
+  // Allow actual navigation when clicking on dropdown items (they are <a> tags)
+  // No action needed – they will navigate normally.
 
 })();
 
 // ===== ENHANCED FAQ TOGGLE (ACCORDION STYLE) =====
 (function initFaqAccordion() {
-  // Select all FAQ items (both pricing page and main FAQ page)
   const allFaqItems = document.querySelectorAll('.faq-item');
-  
   if (allFaqItems.length === 0) return;
 
-  // Function to close all FAQs within the same container (optional accordion)
-  function closeSiblingFaqs(currentFaq) {
-    const parentContainer = currentFaq.closest('.faq-items, .faq-category, .pricing .faq-items, .faq .faq-items');
-    if (!parentContainer) return;
-    
-    const siblingFaqs = parentContainer.querySelectorAll('.faq-item');
-    siblingFaqs.forEach(item => {
-      if (item !== currentFaq) {
-        item.classList.remove('active');
-      }
-    });
-  }
-
-  // Toggle function
   function handleFaqClick(e) {
     const faqItem = e.currentTarget.closest('.faq-item');
     if (!faqItem) return;
-    
-    // If you want accordion behavior (only one open at a time), uncomment next line:
-    // closeSiblingFaqs(faqItem);
-    
-    // Toggle current
     faqItem.classList.toggle('active');
   }
 
-  // Attach click listener to each FAQ question
   allFaqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     if (question) {
-      // Remove any existing inline onclick to avoid double triggers
       question.removeAttribute('onclick');
       question.addEventListener('click', handleFaqClick);
     }
   });
 
-  // Also handle any dynamically added FAQ items (if needed)
-  // Using event delegation on a common container
   document.body.addEventListener('click', (e) => {
     const question = e.target.closest('.faq-question');
     if (!question) return;
-    
     const faqItem = question.closest('.faq-item');
     if (!faqItem) return;
-    
-    // Prevent if the click was on a nested link/button
     if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
-    
-    // Toggle (accordion behavior optional)
-    // closeSiblingFaqs(faqItem);
     faqItem.classList.toggle('active');
   });
 
-  // Ensure the global toggleFaq function still works if called from inline
   window.toggleFaq = function(element) {
     const faqItem = element.closest('.faq-item');
-    if (faqItem) {
-      faqItem.classList.toggle('active');
-    }
+    if (faqItem) faqItem.classList.toggle('active');
   };
 })();
 
-// ===== TRUSTED BY LOGO CAROUSEL – ROBUST CLONE & MOBILE FIX =====
+// ===== TRUSTED BY LOGO CAROUSEL =====
 (function initLogoCarousel() {
   const carousel = document.getElementById('logoCarousel');
   if (!carousel) return;
 
-  // Clear any existing clones to avoid duplication on hot reload
   const originalItems = Array.from(carousel.children);
-  
-  // Remove all children and re-add only original items (prevents duplicate clones)
   carousel.innerHTML = '';
   originalItems.forEach(item => carousel.appendChild(item.cloneNode(true)));
   
-  // Now clone the freshly added items for seamless loop
   const items = carousel.querySelectorAll('.logo-item');
   items.forEach(item => {
     const clone = item.cloneNode(true);
     carousel.appendChild(clone);
   });
 
-  // Set dynamic animation speed based on item count
   function setAnimationDuration() {
-    const itemCount = items.length; // original items count
-    const baseSpeed = window.innerWidth <= 768 ? 20 : 30; // seconds
+    const itemCount = items.length;
+    const baseSpeed = window.innerWidth <= 768 ? 20 : 30;
     carousel.style.animationDuration = baseSpeed + 's';
   }
   setAnimationDuration();
-  
-  // Recalculate on window resize (optional)
   window.addEventListener('resize', setAnimationDuration);
 })();
